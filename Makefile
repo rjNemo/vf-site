@@ -1,6 +1,6 @@
 build:
-	pipenv run python main.py > index.html
+	pipenv run python main.py > dist/index.html
 
 
 run: build
-	pipenv run python -m http.server
+	cd dist && pipenv run python -m http.server
