@@ -1,8 +1,10 @@
 # VillaFleurie rental site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/aa5c29ee-eced-46dd-ad53-1e0822001364/deploy-status)](https://app.netlify.com/sites/villafleurie-site/deploys)
+
 ## TODO
 
-- [ ] Create a base template for the header and footer
+- [X] Create a base template for the header and footer
 - [ ] Build index page
 - [ ] Build room pages
 - [ ] Build contact pages
