@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block  content %}
+<!-- Header -->
+<header class="ex-header bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h1 class="green">Nous contacter</h1>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+
+<!-- Form -->
+<div class="ex-form-1 bg-gray pb-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <p class="mb-5">Voici l'occasion de nous contacter si vous êtes à la recherche d'une location capable
+                    d'offrir une expérience étonnante en termes de confort et de détente <a
+                            href="mailto:location.villafleurie@gmail.com">location.villafleurie@gmail.com</a> ou
+                    appelez-nous quand vous le pouvez <a href="tel:+590690441530">+590 690 44 15 30</a></p>
+                <p>.
+
+                    <!-- Contact Form -->
+                <form id="contactForm" data-toggle="validator" data-focus="false" netlify>
+                    <div class="form-group">
+                        <input type="text" class="form-control-input" id="cname" required>
+                        <label class="label-control" for="cname">Nom complet</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control-input" id="cemail" required>
+                        <label class="label-control" for="cemail">Email</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                        <label class="label-control" for="cmessage">Votre message</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control-submit-button">Envoyer</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+                <!-- end of contact form -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-form-1 -->
+<!-- end of form -->
+
+
+<!-- Basic -->
+<div class="ex-basic-1 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h2 class="mt-3 mb-4">Où nous trouver</h2>
+                <p class="mb-5">Notre mission à VillaFleurie est de nous concentrer sur tous les détails pour faire de
+                    votre séjour une expérience extraordinaire. une expérience inoubliable. Nous avons formé notre
+                    personnel pour qu'il réponde à vos attentes et les dépasse, afin que votre expérience à la
+                    VillaFleurie ne soit pas un simple souvenir, mais l'un de vos meilleurs souvenirs. ne soit pas qu'un
+                    simple souvenir, mais l'un des meilleurs souvenirs que vous ayez. Nous sommes passionnés passionnés
+                    et nous ne vous décevrons pas.</p>
+
+                <div class="map-responsive mb-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.2598078323063!2d-61.48991482394046!3d16.20707768449259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c134f148764f5d5%3A0x981bb218cee8b16c!2sVillaFleurie!5e0!3m2!1sfr!2sde!4v1685258248016!5m2!1sfr!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <a class="btn-solid-reg mb-6" href="index.html#header">Réserver</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-1 -->
+<!-- end of basic -->
+{% endblock %}
