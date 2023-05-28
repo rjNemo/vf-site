@@ -6,10 +6,11 @@
 
 - [X] Create a base template for the header and footer
 - [X] Build index page
-- [ ] Build room pages
+- [X] Build room pages
   - [x] T2
-- [ ] Build contact pages
-- [ ] Use netlify form for the contact form
+  - [x] T3
+- [X] Build contact pages
+- [X] Use netlify form for the contact form
 - [ ] Deploy to VillaFleurie's domain
 - [ ] Find attractions for landing page
 - [ ] Pick real reviews from AirBnB and Booking
