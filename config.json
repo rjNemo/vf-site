@@ -4,5 +4,6 @@
     "t2-corail.html",
     "t3-azur.html",
     "contact.html"
-  ]
+  ],
+  "outDir": "dist"
 }

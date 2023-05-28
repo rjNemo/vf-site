@@ -1,7 +1,12 @@
 import json
+from typing import TypedDict
 
 
-def load_templates():
+class Config(TypedDict):
+    templates: list[str]
+    outDir: str
+
+
+def load() -> Config:
     with open("config.json", "r") as f:
-        res = json.loads(f.read())
-    return res["templates"]
+        return json.loads(f.read())
