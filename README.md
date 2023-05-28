@@ -16,6 +16,7 @@
 - [ ] Optimize images
 - [ ] Automate the file search
 - [ ] Extract data out of the template
+- [ ] Create a template for the rooms
 
 ## Excluded
 

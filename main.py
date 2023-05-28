@@ -12,7 +12,7 @@ def render(template: str) -> str:
 
 
 # TODO: from a config
-templates = ["index.html", "t2-corail.html"]
+templates = ["index.html", "t2-corail.html", "t3-azur.html"]
 
 
 for template in templates:
