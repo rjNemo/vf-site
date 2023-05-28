@@ -1,5 +1,5 @@
 build:
-	pipenv run python main.py > dist/index.html
+	pipenv run python main.py
 
 
 run: build
