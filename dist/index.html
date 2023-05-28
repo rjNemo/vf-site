@@ -77,7 +77,6 @@
 
 <!-- Header -->
 <header id="header" class="header">
-
     <!-- Header Slider -->
     <div class="swiper-container header-slider">
         <div class="swiper-wrapper">
@@ -92,9 +91,9 @@
     <!-- end of header slider -->
 
     <div class="text-container">
-        <h1>Villa The Amazing Experience</h1>
-        <a class="btn-solid-lg popup-with-move-anim" href="#header-details-lightbox">Book Us</a>
-        <a class="btn-outline-lg page-scroll" href="#description">Discover</a>
+        <h1>VillaFleurie : L'expérience extraordinaire</h1>
+        <a class="btn-solid-lg popup-with-move-anim" href="#header-details-lightbox">Réserver</a>
+        <a class="btn-outline-lg page-scroll" href="#description">Découvrir</a>
     </div> <!-- end of text-container -->
 </header> <!-- end of header -->
 <!-- end of header -->
@@ -107,53 +106,51 @@
         <div class="row">
             <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
             <div class="col-lg-12">
-                <p>Fill out and send the form to book Villa</p>
-
+                <p>Remplir et envoyer le formulaire pour réserver VillaFleurie</p>
                 <!-- Booking Form -->
                 <!-- autocomplete = off to avoid display problems in mobile view -->
-                <form id="bookingForm" data-toggle="validator" data-focus="false" autocomplete="off">
+                <form id="bookingForm" data-toggle="validator" data-focus="false" autocomplete="off" netlify>
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="name" required>
-                        <label class="label-control" for="name">Complete name</label>
+                        <label class="label-control" for="name">Nom complet</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control-input" id="email" required>
-                        <label class="label-control" for="email">Email address</label>
+                        <label class="label-control" for="email">Adresse email</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="phone" required>
-                        <label class="label-control" for="phone">Phone number</label>
+                        <label class="label-control" for="phone">Numéro de téléphone</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="people" required>
-                        <label class="label-control" for="people">Number of people</label>
+                        <label class="label-control" for="people">Nombre de personnes</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <select class="form-control-select" id="room" required>
-                            <option class="select-option" value="" disabled selected>Choose room</option>
-                            <option class="select-option" value="Balcony Room">Balcony Room</option>
-                            <option class="select-option" value="Panoramic Room">Panoramic Room</option>
-                            <option class="select-option" value="Presidential Room">Presidential Room</option>
+                            <option class="select-option" value="" disabled selected>Choisissez une chambre</option>
+                            <option class="select-option" value="Balcony Room">T2 Corail</option>
+                            <option class="select-option" value="Panoramic Room">T3 Azur</option>
                         </select>
                         <div class="help-block with-errors"></div>
                     </div>
                     <!-- readonly is enabled to avoid display problems in mobile view -->
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="start" readonly required>
-                        <label class="label-control" for="start">Check-in</label>
+                        <label class="label-control" for="start">Arrivée</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control-input" id="end" readonly required>
-                        <label class="label-control" for="end">Check-out</label>
+                        <label class="label-control" for="end">Départ</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="form-control-submit-button">Book Now</button>
+                        <button type="submit" class="form-control-submit-button">Réserver</button>
                     </div>
                     <div class="form-message">
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
@@ -174,9 +171,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="green">Get To Know Villa</h2>
-                <p class="p-heading">Villa is an unique Bed & Breakfast unit situated on the magnificent Mediterranean
-                    sea shores, prepared to welcome tranquility seeking tourists all year long</p>
+                <h2 class="green">Découvrir VillaFleurie</h2>
+                <p class="p-heading">Villa est un lieu de vacances unique situé sur le magnifique archipel de la
+                    Guadeloupe, prête à accueillir des touristes en quête de tranquillité tout au long de l'année.</p>
             </div> <!-- end of col -->
             <div class="col-lg-12">
 
@@ -262,9 +259,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Amazing Facilities</h2>
-                <p class="p-heading">Everything you need for a relaxed stay. Villa's facilities were designed to
-                    accommodate the needs of tourists with very high demands from all over the world</p>
+                <h2>Des installations étonnantes</h2>
+                <p class="p-heading">Tout ce dont vous avez besoin pour un séjour détendu. Les installations de
+                    VillaFleurie ont été conçues pour répondre aux besoins des touristes très exigeants du monde entier</p>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
         <div class="row">
@@ -281,19 +278,13 @@
                     <li class="nav-item">
                         <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
                            aria-controls="tab-2" aria-selected="false">
-                            <i class="fas fa-glass-martini-alt"></i><span>Terrace</span>
+                            <i class="fas fa-glass-martini-alt"></i><span>Terrasse</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
                            aria-controls="tab-3" aria-selected="false">
-                            <i class="fas fa-sun"></i><span>Beach</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-tab-4" data-toggle="tab" href="#tab-4" role="tab"
-                           aria-controls="tab-4" aria-selected="true">
-                            <i class="fas fa-futbol"></i><span>Playground</span>
+                            <i class="fas fa-sun"></i><span>Plage</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -318,12 +309,9 @@
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="text-container">
-                                    <h3>Delicious Slow-cooked Local Food</h3>
-                                    <p>We serve delicious food from the local cuisine made with natural ingredients from
-                                        local farms and markets. Besides the range of meat dishes Villa is vegetarian
-                                        friendly too. </p>
-                                    <p>No need to hurry in the morning to get good food since our breakfast serving
-                                        times extend in the early noon.</p>
+                                    <h3>Délicieuse cuisine locale</h3>
+                                    <p>Nous servons des plats délicieux issus de la cuisine locale et préparés à partir d'ingrédients naturels provenant de fermes et de marchés locaux. </p>
+                                    <p>Il n'est pas nécessaire de se dépêcher le matin pour obtenir un bon repas, car nos heures de service du petit-déjeuner s'étendent jusqu'au début de la journée. s'étendent jusqu'au début de midi..</p>
                                     <p class="green"><strong>OPEN FROM 8:00 TO 22:00</strong></p>
                                 </div> <!-- end of text-container -->
                             </div> <!-- end of col -->
@@ -336,14 +324,10 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="text-container">
-                                    <h3>Beautiful Terrace For Coffee & Drinks</h3>
-                                    <p>Start your vacation day with an invigorating coffee and choose to sit down and
-                                        relax or plan your trips to the surrounding historical sites and tourists
-                                        attractions.</p>
-                                    <p>Besides alcoholic beverages we also serve a great assortment of smoothies and
-                                        non-alcoholic cocktails.</p>
-                                    <a class="btn-solid-reg" href="article.html">Article</a> <a class="btn-outline-reg"
-                                                                                                href="contact.html">Contact</a>
+                                    <h3>Belle terrasse pour le café et les boissons</h3>
+                                    <p>Commencez votre journée de vacances par un café revigorant et choisissez de vous asseoir et de vous détendre ou de planifier vos excursions dans les sites historiques et touristiques environnants. ou planifiez vos excursions vers les sites historiques et les attractions touristiques des environs touristiques.</p>
+                                    <p>Outre les boissons alcoolisées, nous servons également un grand assortiment de smoothies et de cocktails sans alcool..</p>
+                                    <a class="btn-solid-reg" href="article.html">Article</a> <a class="btn-outline-reg" href="contact.html">Contact</a>
                                 </div> <!-- end of text-container -->
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
@@ -365,54 +349,24 @@
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="text-container">
-                                    <h3>Warm Beaches And Turquoise Waters</h3>
-                                    <p>There are 2 beautiful sunny beaches near Villa, conveniently equipped with beach
-                                        chairs, umbrellas, beach bar, showers and trained life guards for your
-                                        safety.</p>
+                                    <h3>Plages chaudes et eaux turquoises</h3>
+                                    <p>Il y a deux belles plages ensoleillées près de la villa, équipées de chaises de plage, de parasols, d'un bar de plage, de douches et de sauveteurs qualifiés. chaises de plage, parasols, bar de plage, douches et sauveteurs qualifiés pour votre sécurité.</p>
                                     <ul class="list-unstyled li-space-lg">
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Get sun exposure all day long due to the
-                                                orientation
-                                            </div>
+                                            <div class="media-body">Exposition au soleil tout au long de la journée grâce à l'orientation. </div>
                                         </li>
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Gold sand which extends for a long stretch in the
-                                                water
-                                            </div>
+                                            <div class="media-body">Sable doré qui s'étend longuement dans l'eau </div>
                                         </li>
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Amenities are built to provide maximum relaxation
-                                            </div>
+                                            <div class="media-body">Les équipements sont conçus pour offrir un maximum de détente </div>
                                         </li>
                                     </ul>
-                                    <a class="green" href="article.html">Read More >></a>
+                                    <a class="green" href="article.html">En savoir plus</a>
                                 </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab-4">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="text-container">
-                                    <h3>Kids Are Happy When Having Fun</h3>
-                                    <p>Children have their own space to have fun and play games under adult supervision
-                                        so you can enjoy a few moments of relaxation in your room or some beach-front
-                                        activities.</p>
-                                    <p>You can check up on them through the provided video surveillance mobile app
-                                        designed for parents.</p>
-                                    <p class="green"><strong>OPEN FROM 8:00 TO 22:00</strong></p>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="../images/facilities-tab-4.jpg" alt="alternative">
-                                </div> <!-- end of image-container -->
                             </div> <!-- end of col -->
                         </div> <!-- end of row -->
                     </div> <!-- end of tab-pane -->
@@ -429,39 +383,30 @@
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="text-container">
-                                    <h3>No Need To Worry About Your Car</h3>
-                                    <p>Villa offers free parking for all its customers in a safe and easy to reach area.
-                                        The parking area is guarded and supervised with special cameras for your peace
-                                        of mind</p>
+                                    <h3>Plus besoin de s'inquiéter pour sa voiture</h3>
+                                    <p>Villa offre un parking gratuit à tous ses clients dans une zone sûre et facile d'accès. Le parking est gardé et surveillé par des caméras spéciales pour votre tranquillité. l'esprit</p>
                                     <ul class="list-unstyled li-space-lg">
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Free access for any type of car and station wagon
-                                            </div>
+                                            <div class="media-body">Accès gratuit pour tout type de voiture</div>
                                         </li>
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Video surveillance and gated access as standard
-                                                options
-                                            </div>
+                                            <div class="media-body">Vidéosurveillance et accès protégé en option standard </div>
                                         </li>
                                         <li class="media">
                                             <i class="fas fa-square"></i>
-                                            <div class="media-body">Enjoy your stay without being concerned about the
-                                                car
-                                            </div>
+                                            <div class="media-body">Profitez de votre séjour sans vous soucier de la voiture </div>
                                         </li>
                                     </ul>
-                                    <p class="green"><strong>PARKING SCHEDULE: NON-STOP</strong></p>
+                                    <p class="green"><strong>HORAIRE DE STATIONNEMENT : NON-STOP</strong></p>
                                 </div> <!-- end of text-container -->
                             </div> <!-- end of col -->
                         </div> <!-- end of row -->
                     </div> <!-- end of tab-pane -->
                     <!-- end of tab -->
-
                 </div> <!-- end of tab-content -->
                 <!-- end of tabs content -->
-
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -474,14 +419,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="green">Comfort And Relaxation</h2>
+                <h2 class="green">Confort et détente</h2>
                 <ul class="list-unstyled li-space-lg p-heading">
-                    <li class="address">Villa's rooms offer comfort and relaxation. All of them include:</li>
-                    <li><i class="fas fa-wifi"></i>Free Wi-Fi</li>
-                    <li><i class="fas fa-bath"></i>Private bathroom</li>
-                    <li><i class="fas fa-tablet"></i>Cabinet fridge</li>
-                    <li><i class="fas fa-tv"></i>Widescreen LCD</li>
-                    <li><i class="fas fa-snowflake"></i>Air conditioning</li>
+                    <li class="address">Les chambres de la Villa offrent confort et détente. Elles comprennent toutes:</li>
+                    <li><i class="fas fa-wifi"></i>Wi-Fi gratuit</li>
+                    <li><i class="fas fa-bath"></i>Salle de bain privée</li>
+                    <li><i class="fas fa-tablet"></i>Réfrigérateur</li>
+                    <li><i class="fas fa-tv"></i>Écran large LCD</li>
+                    <li><i class="fas fa-snowflake"></i>Climatisation</li>
                 </ul> <!-- end of list-unstyled -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -495,10 +440,10 @@
                                                          alt="alternative"></a>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Balcony Room - $59/day</h3>
-                        <p>Our entry level room gives you access to all amenities at a really affordable price</p>
-                        <a class="btn-solid-reg popup-with-move-anim" href="#header-details-lightbox">Book Us</a> <a
-                            class="btn-outline-reg" href="balcony-room.html">Details</a>
+                        <h3 class="card-title">T2 Corail - 59€/nuit</h3>
+                        <p>Notre chambre d'entrée de gamme vous donne accès à toutes les commodités à un prix très abordable.</p>
+                        <a class="btn-solid-reg popup-with-move-anim" href="#header-details-lightbox">Réserver</a> <a
+                            class="btn-outline-reg" href="balcony-room.html">Détails</a>
                     </div>
                 </div>
                 <!-- end of card -->
@@ -510,28 +455,16 @@
                                                            alt="alternative"></a>
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Panoramic Room - $79/day</h3>
-                        <p>Get the best view to the beautiful sea and the truly splendid Villa surroundings</p>
-                        <a class="btn-solid-reg popup-with-move-anim" href="#header-details-lightbox">Book Us</a> <a
-                            class="btn-outline-reg" href="panoramic-room.html">Details</a>
+                        <h3 class="card-title">T3 Azur - 79€/nuit</h3>
+                        <p>Vous bénéficiez de la meilleure vue sur la mer et sur les environs de la villa, qui sont vraiment splendides.</p>
+                        <a class="btn-solid-reg popup-with-move-anim" href="#header-details-lightbox">Réserver</a> <a
+                            class="btn-outline-reg" href="panoramic-room.html">Détails</a>
                     </div>
                 </div>
                 <!-- end of card -->
 
                 <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <a href="presidential-room.html"><img class="img-fluid"
-                                                              src="../images/rooms-presidential-room.jpg"
-                                                              alt="alternative"></a>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Presidential Room - $99/day</h3>
-                        <p>High class luxury for the most demanding tourists. Features great panorama</p>
-                        <a class="btn-solid-reg popup-with-move-anim" href="#header-details-lightbox">Book Us</a> <a
-                            class="btn-outline-reg" href="presidential-room.html">Details</a>
-                    </div>
-                </div>
+
                 <!-- end of card -->
 
             </div> <!-- end of col -->
@@ -546,7 +479,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="green">Popular Attractions</h2>
+                <h2 class="green">Attractions populaires</h2>
                 <hr class="hr-heading">
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -623,7 +556,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Visitor Reviews</h2>
+                <h2>Avis</h2>
                 <hr class="hr-heading">
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -736,14 +669,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="green">Location Details</h2>
+                <h2 class="green">Où nous trouver</h2>
                 <ul class="list-unstyled li-space-lg p-heading">
-                    <li class="address">We're waiting for your visit:</li>
-                    <li><i class="fas fa-map-marker-alt"></i>Villa Bed & Breakfast, Firostefani, 84700, Santorini,
-                        Cyclades islands, Greece
-                    </li>
-                    <li><i class="fas fa-phone"></i><a class="green" href="tel:003024630820">+81 720 2212</a></li>
-                    <li><i class="fas fa-envelope"></i><a class="green" href="mailto:reception@villa.com">reception@villa.com</a>
+                    <li class="address">Nous attendons votre visite</li>
+                    <li><i class="fas fa-map-marker-alt"></i>VillaFleurie, 4 rue Gerty Archimède, 97190 Le Gosier, Guadeloupe </li>
+                    <li><i class="fas fa-phone"></i><a class="green" href="tel:003024630820">+590 690 44 15 30</a></li>
+                    <li><i class="fas fa-envelope"></i><a class="green" href="mailto:reception@villa.com">location.villafleurie@gmail.com</a>
                     </li>
                 </ul>
             </div> <!-- end of col -->
@@ -751,8 +682,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6423.841890375458!2d25.435475745356655!3d36.386907765681734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1499ce86adfd9ff7%3A0xb2a761f740d68afc!2sSantorini!5e0!3m2!1sen!2sro!4v1596106317886!5m2!1sen!2sro"
-                            allowfullscreen=""></iframe>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.2598078323063!2d-61.48991482394046!3d16.20707768449259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c134f148764f5d5%3A0x981bb218cee8b16c!2sVillaFleurie!5e0!3m2!1sfr!2sde!4v1685258248016!5m2!1sfr!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div> <!-- end of map-responsive -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->

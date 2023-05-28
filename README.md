@@ -5,11 +5,14 @@
 ## TODO
 
 - [X] Create a base template for the header and footer
-- [ ] Build index page
+- [X] Build index page
 - [ ] Build room pages
 - [ ] Build contact pages
 - [ ] Use netlify form for the contact form
 - [ ] Deploy to VillaFleurie's domain
+- [ ] Find attractions for landing page
+- [ ] Pick real reviews from AirBnB and Booking
+- [ ] Automate the file search
 
 ## Excluded
 
