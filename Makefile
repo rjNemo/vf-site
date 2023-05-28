@@ -1,6 +1,6 @@
 build:
-	pipenv run python main.py
+	@pipenv run python -m lib.main
 
 
 run: build
-	cd dist && pipenv run python -m http.server
+	@cd dist && pipenv run python -m http.server

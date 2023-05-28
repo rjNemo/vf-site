@@ -7,8 +7,8 @@
 - [X] Create a base template for the header and footer
 - [X] Build index page
 - [X] Build room pages
-  - [x] T2
-  - [x] T3
+    - [x] T2
+    - [x] T3
 - [X] Build contact pages
 - [X] Use netlify form for the contact form
 - [ ] Deploy to VillaFleurie's domain
@@ -18,8 +18,14 @@
 - [ ] Automate the file search
 - [ ] Extract data out of the template
 - [ ] Create a template for the rooms
+- [ ] Build script before commit
 
 ## Excluded
 
 * The article page
 * The language switcher
+
+## Built with
+
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - fast, expressive, extensible templating
+  engine
