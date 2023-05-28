@@ -4,7 +4,8 @@
     "index.html",
     "t2-corail.html",
     "t3-azur.html",
-    "contact.html"
+    "contact.html",
+    "reservation.html"
   ],
   "outDir": "dist"
 }
