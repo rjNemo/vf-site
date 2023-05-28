@@ -17,6 +17,7 @@
 - [ ] Optimize images
 - [ ] Automate the file search
 - [ ] Extract data out of the template
+- [ ] Create a 'all' key for data available in all templates
 - [ ] Create a template for the rooms
 - [ ] Build script before commit
 
@@ -29,3 +30,4 @@
 
 - [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) - fast, expressive, extensible templating
   engine
+- [Netlify](https://www.netlify.com/) - Develop and deploy websites and apps in record time

@@ -18,7 +18,7 @@ def main():
     for template in config["templates"]:
         logger.info(f"📃Render '{template}'")
         with open(path.join(config["outDir"], template), "w") as f:
-            f.write(render(template))
+            f.write(render(template, data.get(template)))
     logger.info("🎉 Done…")
 
 
