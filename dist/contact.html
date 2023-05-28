@@ -100,19 +100,19 @@
                 <p>.
 
                     <!-- Contact Form -->
-                <form id="contactForm" data-toggle="validator" data-focus="false" netlify>
+                <form id="contactForm" name="contactForm" data-toggle="validator" data-focus="false" method="post" netlify>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="cname" required>
+                        <input type="text" class="form-control-input" id="cname" name="name" required>
                         <label class="label-control" for="cname">Nom complet</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control-input" id="cemail" required>
+                        <input type="email" class="form-control-input" id="cemail" name="email" required>
                         <label class="label-control" for="cemail">Email</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                        <textarea class="form-control-textarea" id="cmessage" name="message" required></textarea>
                         <label class="label-control" for="cmessage">Votre message</label>
                         <div class="help-block with-errors"></div>
                     </div>
