@@ -34,43 +34,43 @@
                 <p>Remplir et envoyer le formulaire pour réserver VillaFleurie</p>
                 <!-- Booking Form -->
                 <!-- autocomplete = off to avoid display problems in mobile view -->
-                <form id="bookingForm" data-toggle="validator" data-focus="false" autocomplete="off" netlify>
+                <form name="bookingForm" id="bookingForm" data-toggle="validator" data-focus="false" autocomplete="off" netlify>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="name" required>
+                        <input type="text" class="form-control-input" id="name" name="name" required>
                         <label class="label-control" for="name">Nom complet</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control-input" id="email" required>
+                        <input type="email" class="form-control-input" id="email" name="email" required>
                         <label class="label-control" for="email">Adresse email</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="phone" required>
+                        <input type="text" class="form-control-input" id="phone" name="phone" required>
                         <label class="label-control" for="phone">Numéro de téléphone</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="people" required>
+                        <input type="text" class="form-control-input" id="people" name="people" required>
                         <label class="label-control" for="people">Nombre de personnes</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <select class="form-control-select" id="room" required>
+                        <select class="form-control-select" id="room" name="room" required>
                             <option class="select-option" value="" disabled selected>Choisissez une chambre</option>
-                            <option class="select-option" value="Balcony Room">T2 Corail</option>
-                            <option class="select-option" value="Panoramic Room">T3 Azur</option>
+                            <option class="select-option" value="t2">T2 Corail</option>
+                            <option class="select-option" value="t3">T3 Azur</option>
                         </select>
                         <div class="help-block with-errors"></div>
                     </div>
                     <!-- readonly is enabled to avoid display problems in mobile view -->
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="start" readonly required>
+                        <input type="text" class="form-control-input" id="start" name="start" readonly required>
                         <label class="label-control" for="start">Arrivée</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="end" readonly required>
+                        <input type="text" class="form-control-input" id="end" name="end"  readonly required>
                         <label class="label-control" for="end">Départ</label>
                         <div class="help-block with-errors"></div>
                     </div>
