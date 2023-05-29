@@ -11,15 +11,16 @@
     - [x] T3
 - [X] Build contact pages
 - [X] Use netlify form for the contact form
-- [ ] Deploy to VillaFleurie's domain
+- [x] Deploy to VillaFleurie's domain
 - [ ] Find attractions for landing page
-- [ ] Pick real reviews from AirBnB and Booking
+- [x] Pick real reviews from AirBnB and Booking
 - [ ] Optimize images
 - [ ] Automate the file search
 - [ ] Extract data out of the template
 - [ ] Create a 'all' key for data available in all templates
 - [ ] Create a template for the rooms
 - [ ] Build script before commit
+- [ ] Lit parapluie, barbecue et machine à laver
 
 ## Excluded
 

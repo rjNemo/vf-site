@@ -14,6 +14,7 @@ def main():
         logger.error("The configuration file 'config.json' was not found. Please verify it exists at the root level")
         sys.exit()
 
+    data = {}
     logger.info(f"🏁 Start building {config['name']}")
     for template in config["templates"]:
         logger.info(f"📃Render '{template}'")
