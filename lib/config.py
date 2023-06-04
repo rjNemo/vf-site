@@ -5,6 +5,7 @@ from typing import TypedDict
 class Config(TypedDict):
     name: str
     templates: list[str]
+    staticFiles: list[str]
     outDir: str
 
 

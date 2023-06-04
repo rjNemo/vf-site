@@ -1,3 +1,5 @@
+import os
+import shutil
 import sys
 from os import path
 
@@ -15,11 +17,22 @@ def main():
         sys.exit()
 
     data = {}
+    destination_path = config["outDir"]
+
     logger.info(f"🏁 Start building {config['name']}")
+
+    if os.path.exists(destination_path) and os.path.isdir(destination_path):
+        shutil.rmtree(destination_path)
+    os.mkdir(destination_path)
+
     for template in config["templates"]:
         logger.info(f"📃Render '{template}'")
-        with open(path.join(config["outDir"], template), "w") as f:
+        with open(path.join(destination_path, template), "w") as f:
             f.write(render(template, data.get(template)))
+
+    logger.info("⏩ Start copying staticfiles to build")
+    for folder in config["staticFiles"]:
+        shutil.copytree(folder, f"{config['outDir']}/{folder}")
     logger.info("🎉 Done…")
 
 

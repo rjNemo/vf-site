@@ -22,6 +22,7 @@ The configuration file ([config.json](./config.json)) is mandatory and should re
     "contact.html",
     "reservation.html"
   ],
+  "staticFiles": [],
   "outDir": "dist"
 }
 ```

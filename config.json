@@ -7,5 +7,11 @@
     "contact.html",
     "reservation.html"
   ],
+  "staticFiles": [
+    "images",
+    "js",
+    "css",
+    "webfonts"
+  ],
   "outDir": "dist"
 }
