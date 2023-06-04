@@ -6,7 +6,7 @@
 
 The entry point is located in the [main file](./lib/main.py). It should not be modified.
 
-The templates files must be located in the [templates](./templates) directory.
+By default, the templates files are located in the [templates](./templates) directory.
 You can use template inheritance but not yet data injection.
 ### Configuration
 
@@ -15,6 +15,7 @@ The configuration file ([config.json](./config.json)) is mandatory and should re
 ```json
 {
   "name": "VillaFleurie",
+  "templatesFolder": "templates",
   "templates": [
     "index.html",
     "t2-corail.html",

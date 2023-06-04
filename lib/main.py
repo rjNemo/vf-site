@@ -6,7 +6,7 @@ from os import path
 from loguru import logger
 
 from lib.config import load
-from lib.engine import render
+from lib.engine import FileSystemRenderer
 
 
 def main():
@@ -18,6 +18,7 @@ def main():
 
     data = {}
     destination_path = config["outDir"]
+    fs = FileSystemRenderer(config.get("templatesFolder"))
 
     logger.info(f"🏁 Start building {config['name']}")
 
@@ -28,11 +29,12 @@ def main():
     for template in config["templates"]:
         logger.info(f"📃Render '{template}'")
         with open(path.join(destination_path, template), "w") as f:
-            f.write(render(template, data.get(template)))
+            f.write(fs.render(template, data.get(template)))
 
     logger.info("⏩ Start copying staticfiles to build")
     for folder in config["staticFiles"]:
         shutil.copytree(folder, f"{config['outDir']}/{folder}")
+
     logger.info("🎉 Done…")
 
 
