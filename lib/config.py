@@ -4,9 +4,9 @@ from typing import TypedDict
 
 class Config(TypedDict):
     name: str
-    templatesFolder: str
+    templatesDir: str
     templates: list[str]
-    staticFiles: list[str]
+    staticFilesDir: list[str]
     outDir: str
 
 

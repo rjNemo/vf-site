@@ -7,7 +7,7 @@
     "contact.html",
     "reservation.html"
   ],
-  "staticFiles": [
+  "staticFilesDir": [
     "images",
     "js",
     "css",

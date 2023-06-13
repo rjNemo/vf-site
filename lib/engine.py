@@ -1,9 +1,6 @@
-from dataclasses import dataclass
 from typing import Protocol
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-
-engine = Environment(loader=FileSystemLoader("templates"), autoescape=select_autoescape())
 
 
 class Renderer(Protocol):
@@ -11,9 +8,9 @@ class Renderer(Protocol):
         ...
 
 
-@dataclass
 class FileSystemRenderer(Renderer):
-    path: str = "templates"
+    def __init__(self, path: str):
+        self.engine = Environment(loader=FileSystemLoader(path), autoescape=select_autoescape())
 
     def render(self, template: str, context: dict | None = None) -> str:
-        return engine.get_template(template).render(context or {})
+        return self.engine.get_template(template).render(context or {})

@@ -15,7 +15,7 @@ The configuration file ([config.json](./config.json)) is mandatory and should re
 ```json
 {
   "name": "VillaFleurie",
-  "templatesFolder": "templates",
+  "templatesDir": "templates",
   "templates": [
     "index.html",
     "t2-corail.html",
@@ -23,7 +23,7 @@ The configuration file ([config.json](./config.json)) is mandatory and should re
     "contact.html",
     "reservation.html"
   ],
-  "staticFiles": [],
+  "staticFilesDir": [],
   "outDir": "dist"
 }
 ```

@@ -1,12 +1,17 @@
 import os
 import shutil
 import sys
-from os import path
 
 from loguru import logger
 
 from lib.config import load
 from lib.engine import FileSystemRenderer
+
+NAME = "name"
+TEMPLATES = "templates"
+TEMPLATES_DIR = "templatesDir"
+STATIC_FILES_DIR = "staticFilesDir"
+OUT_DIR = "outDir"
 
 
 def main():
@@ -17,23 +22,23 @@ def main():
         sys.exit()
 
     data = {}
-    destination_path = config["outDir"]
-    fs = FileSystemRenderer(config.get("templatesFolder"))
+    destination_path = config[OUT_DIR]
+    fs = FileSystemRenderer(config.setdefault(TEMPLATES_DIR, TEMPLATES))
 
-    logger.info(f"🏁 Start building {config['name']}")
+    logger.info(f"🏁 Start building {config[NAME]}")
 
     if os.path.exists(destination_path) and os.path.isdir(destination_path):
         shutil.rmtree(destination_path)
     os.mkdir(destination_path)
 
-    for template in config["templates"]:
+    for template in config[TEMPLATES]:
         logger.info(f"📃Render '{template}'")
-        with open(path.join(destination_path, template), "w") as f:
+        with open(os.path.join(destination_path, template), "w") as f:
             f.write(fs.render(template, data.get(template)))
 
     logger.info("⏩ Start copying staticfiles to build")
-    for folder in config["staticFiles"]:
-        shutil.copytree(folder, f"{config['outDir']}/{folder}")
+    for folder in config[STATIC_FILES_DIR]:
+        shutil.copytree(folder, os.path.join(config[OUT_DIR], folder))
 
     logger.info("🎉 Done…")
 
