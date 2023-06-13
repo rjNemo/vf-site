@@ -1,15 +1,29 @@
 import json
-from typing import TypedDict
+from dataclasses import dataclass
+
+NAME = "name"
+TEMPLATES = "templates"
+TEMPLATES_DIR = "templatesDir"
+STATIC_FILES_DIR = "staticFilesDir"
+OUT_DIR = "outDir"
 
 
-class Config(TypedDict):
+@dataclass(frozen=True)
+class Config:
     name: str
-    templatesDir: str
     templates: list[str]
-    staticFilesDir: list[str]
-    outDir: str
+    static_files_dir: list[str]
+    out_dir: str
+    templates_dir: str
 
 
 def load() -> Config:
     with open("config.json", "r") as f:
-        return json.loads(f.read())
+        raw_config = json.loads(f.read())
+        return Config(
+            name=raw_config[NAME],
+            templates=raw_config[TEMPLATES],
+            static_files_dir=raw_config[STATIC_FILES_DIR],
+            out_dir=raw_config.setdefault(OUT_DIR, "dist"),
+            templates_dir=raw_config.setdefault(TEMPLATES_DIR, "templates"),
+        )

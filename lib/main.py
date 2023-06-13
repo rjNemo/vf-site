@@ -7,12 +7,6 @@ from loguru import logger
 from lib.config import load
 from lib.engine import FileSystemRenderer
 
-NAME = "name"
-TEMPLATES = "templates"
-TEMPLATES_DIR = "templatesDir"
-STATIC_FILES_DIR = "staticFilesDir"
-OUT_DIR = "outDir"
-
 
 def main():
     try:
@@ -22,23 +16,23 @@ def main():
         sys.exit()
 
     data = {}
-    destination_path = config[OUT_DIR]
-    fs = FileSystemRenderer(config.setdefault(TEMPLATES_DIR, TEMPLATES))
+    destination_path = config.out_dir
+    fs = FileSystemRenderer(config.templates_dir)
 
-    logger.info(f"🏁 Start building {config[NAME]}")
+    logger.info(f"🏁 Start building {config.name}")
 
     if os.path.exists(destination_path) and os.path.isdir(destination_path):
         shutil.rmtree(destination_path)
     os.mkdir(destination_path)
 
-    for template in config[TEMPLATES]:
+    for template in config.templates:
         logger.info(f"📃Render '{template}'")
         with open(os.path.join(destination_path, template), "w") as f:
             f.write(fs.render(template, data.get(template)))
 
     logger.info("⏩ Start copying staticfiles to build")
-    for folder in config[STATIC_FILES_DIR]:
-        shutil.copytree(folder, os.path.join(config[OUT_DIR], folder))
+    for folder in config.static_files_dir:
+        shutil.copytree(folder, os.path.join(config.out_dir, folder))
 
     logger.info("🎉 Done…")
 
