@@ -2,12 +2,23 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/aa5c29ee-eced-46dd-ad53-1e0822001364/deploy-status)](https://app.netlify.com/sites/villafleurie-site/deploys)
 
-## Static Site Generator
+## How to use
+
+You can build the site using the built-in static site generator included.
+
+To create a page, create a `toml` file in the `pages` directory. It should contain at least the following fields:
+
+```toml
+name = "index"
+template = "index.html"
+```
+
+You can add other fields they will become available in the template.
 
 The entry point is located in the [main file](./lib/main.py). It should not be modified.
 
 By default, the templates files are located in the [templates](./templates) directory.
-You can use template inheritance but not yet data injection.
+You can use template inheritance.
 
 ### Configuration
 
@@ -17,13 +28,6 @@ The configuration file ([config.json](./config.json)) is mandatory and should re
 {
   "name": "VillaFleurie",
   "templatesDir": "templates",
-  "templates": [
-    "index.html",
-    "t2-corail.html",
-    "t3-azur.html",
-    "contact.html",
-    "reservation.html"
-  ],
   "staticFilesDir": [],
   "outDir": "dist"
 }
@@ -64,7 +68,7 @@ You can then deploy the site on any platform supporting static sites (Netlify,â€
 - [x] Pick real reviews from AirBnB and Booking
 - [ ] Optimize images
 - [ ] Automate the file search
-- [ ] Extract data out of the template
+- [x] Extract data out of the template
 - [ ] Create a 'all' key for data available in all templates
 - [ ] Create a template for the rooms
 - [ ] Build script before commit

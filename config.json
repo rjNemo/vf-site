@@ -1,12 +1,5 @@
 {
   "name": "VillaFleurie",
-  "templates": [
-    "index.html",
-    "t2-corail.html",
-    "t3-azur.html",
-    "contact.html",
-    "reservation.html"
-  ],
   "staticFilesDir": [
     "images",
     "js",
