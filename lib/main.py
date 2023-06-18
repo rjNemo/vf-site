@@ -2,6 +2,7 @@ import os
 import shutil
 import sys
 import tomllib
+from distutils.dir_util import copy_tree
 
 from loguru import logger
 
@@ -32,8 +33,7 @@ def main():
                 fd.write(fs.render(data["template"], data))
 
     logger.info("⏩ Start copying staticfiles to build")
-    for folder in config.static_files:
-        shutil.copytree(folder, os.path.join(config.out_dir, folder))
+    copy_tree(config.static_files, os.path.join(config.out_dir))
 
     logger.info("🎉 Done…")
 

@@ -24,13 +24,9 @@ You can use template inheritance.
 
 The configuration file ([config.toml](./config.toml)) is mandatory and should resemble:
 
-```json
-{
-  "name": "VillaFleurie",
-  "templatesDir": "templates",
-  "staticFilesDir": [],
-  "outDir": "dist"
-}
+```toml
+name = "VillaFleurie"
+out_dir = "dist"
 ```
 
 ### Site Generation
