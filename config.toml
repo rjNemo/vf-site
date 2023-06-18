@@ -1,0 +1,3 @@
+name = "VillaFleurie"
+static_files = ["images", "js", "css", "webfonts"]
+out_dir = "dist"

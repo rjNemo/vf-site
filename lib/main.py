@@ -13,7 +13,7 @@ def main():
     try:
         config = load()
     except FileNotFoundError:
-        logger.error("The configuration file 'config.json' was not found. Please verify it exists at the root level")
+        logger.error("The configuration file 'config.toml' was not found. Please verify it exists at the root level")
         sys.exit()
 
     destination_path = config.out_dir
@@ -32,7 +32,7 @@ def main():
                 fd.write(fs.render(data["template"], data))
 
     logger.info("⏩ Start copying staticfiles to build")
-    for folder in config.static_files_dir:
+    for folder in config.static_files:
         shutil.copytree(folder, os.path.join(config.out_dir, folder))
 
     logger.info("🎉 Done…")

@@ -22,7 +22,7 @@ You can use template inheritance.
 
 ### Configuration
 
-The configuration file ([config.json](./config.json)) is mandatory and should resemble:
+The configuration file ([config.toml](./config.toml)) is mandatory and should resemble:
 
 ```json
 {
@@ -66,7 +66,7 @@ You can then deploy the site on any platform supporting static sites (Netlify,â€
 - [x] Deploy to VillaFleurie's domain
 - [ ] Find attractions for landing page
 - [x] Pick real reviews from AirBnB and Booking
-- [ ] Optimize images
+- [x] Optimize images
 - [ ] Automate the file search
 - [x] Extract data out of the template
 - [ ] Create a 'all' key for data available in all templates
