@@ -5,20 +5,26 @@
 ## How to use
 
 You can build the site using the built-in static site generator included.
+The entry point is located in the [main file](./lib/main.py). It should not be modified.
 
-To create a page, create a `html` file in the `pages` directory. It should contain at least the following fields:
+### Add a page
+
+To add a page, create a `HTML` file in the `pages` directory.
+
+Optionally, you can inject data in the template. To do so you should create a `TOML` file with the same name as the
+template.
+
+Any fields will become available in the template.
+For instance the  `index.toml` for `index.html` could contain the following fields:
 
 ```toml
 name = "index"
 template = "index.html"
 ```
 
-You can add other fields they will become available in the template.
+### Layouts
 
-The entry point is located in the [main file](./lib/main.py). It should not be modified.
-
-By default, the templates files are located in the [templates](./pages) directory.
-You can use template inheritance.
+You can use template inheritance. The layouts must be in the `pages/layouts` subdirectory.
 
 ### Configuration
 
@@ -26,10 +32,9 @@ The configuration file ([config.toml](./config.toml)) is mandatory and should re
 
 ```toml
 name = "VillaFleurie"
-out_dir = "dist"
 ```
 
-### Site Generation
+## Build site
 
 You can generate the site by running:
 
@@ -46,7 +51,7 @@ You can run the output files using a simple python server:
 cd dist && python -m http.server
 ```
 
-### Deployment
+## Deployment
 
 You can then deploy the site on any platform supporting static sites (Netlify,â€¦) or your own VPS.
 
@@ -63,7 +68,7 @@ You can then deploy the site on any platform supporting static sites (Netlify,â€
 - [ ] Find attractions for landing page
 - [x] Pick real reviews from AirBnB and Booking
 - [x] Optimize images
-- [ ] Automate the file search
+- [x] Automate the file search
 - [x] Extract data out of the template
 - [ ] Create a 'all' key for data available in all templates
 - [ ] Create a template for the rooms
@@ -72,7 +77,6 @@ You can then deploy the site on any platform supporting static sites (Netlify,â€
 
 ## Excluded
 
-* The article page
 * The language switcher
 
 ## Built with
