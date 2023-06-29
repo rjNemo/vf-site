@@ -2,13 +2,13 @@ import tomllib
 from dataclasses import dataclass
 
 NAME = "name"
-OUT_DIR = "out_dir"
 
 
 @dataclass(frozen=True)
 class Config:
     name: str
-    static_files: str
+    static_dir: str
+    data_dir: str
     out_dir: str
     templates_dir: str
 
@@ -18,7 +18,8 @@ def load() -> Config:
         raw_config = tomllib.load(f)
         return Config(
             name=raw_config[NAME],
-            static_files="assets",
-            out_dir=raw_config.setdefault(OUT_DIR, "dist"),
+            static_dir="assets",
+            data_dir="data",
+            out_dir="dist",
             templates_dir="pages",
         )

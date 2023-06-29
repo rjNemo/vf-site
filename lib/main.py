@@ -24,16 +24,20 @@ def main():
 
     clean_dist(destination_path)
 
-    pages = [page for page in os.scandir("./data") if page.is_file()]
-    for page in pages:
-        with open(page, "rb") as f:
-            data = tomllib.load(f)
-            logger.info(f"📃Render '{page.name}'")
-            with open(os.path.join(destination_path, f'{data["name"]}.html'), "w") as fd:
-                fd.write(fs.render(data["template"], data))
+    for page in os.scandir(config.templates_dir):
+        if page.is_file():
+            with open(os.path.join(destination_path, page.name), "w") as fd:
+                data_file_path = os.path.join(config.data_dir, f"{page.name.split('.')[0]}.toml")
+                data = {}
+                if os.path.isfile(data_file_path):
+                    with open(data_file_path, "rb") as f:
+                        data = tomllib.load(f)
+                        logger.debug(data)
+                logger.info(f"📃Render '{page.name}'")
+                fd.write(fs.render(page.name, data))
 
     logger.info("⏩ Start copying staticfiles to build")
-    copy_tree(config.static_files, os.path.join(config.out_dir))
+    copy_tree(config.static_dir, os.path.join(config.out_dir))
 
     logger.info("🎉 Done…")
 
