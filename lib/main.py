@@ -24,7 +24,7 @@ def main():
 
     clean_dist(destination_path)
 
-    pages = [page for page in os.scandir("./pages") if page.is_file()]
+    pages = [page for page in os.scandir("./data") if page.is_file()]
     for page in pages:
         with open(page, "rb") as f:
             data = tomllib.load(f)

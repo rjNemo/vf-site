@@ -2,8 +2,6 @@ import tomllib
 from dataclasses import dataclass
 
 NAME = "name"
-TEMPLATES_DIR = "templates_dir"
-STATIC_FILES = "static_files"
 OUT_DIR = "out_dir"
 
 
@@ -22,5 +20,5 @@ def load() -> Config:
             name=raw_config[NAME],
             static_files="assets",
             out_dir=raw_config.setdefault(OUT_DIR, "dist"),
-            templates_dir=raw_config.setdefault(TEMPLATES_DIR, "templates"),
+            templates_dir="pages",
         )

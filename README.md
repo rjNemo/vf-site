@@ -6,7 +6,7 @@
 
 You can build the site using the built-in static site generator included.
 
-To create a page, create a `toml` file in the `pages` directory. It should contain at least the following fields:
+To create a page, create a `html` file in the `pages` directory. It should contain at least the following fields:
 
 ```toml
 name = "index"
@@ -17,7 +17,7 @@ You can add other fields they will become available in the template.
 
 The entry point is located in the [main file](./lib/main.py). It should not be modified.
 
-By default, the templates files are located in the [templates](./templates) directory.
+By default, the templates files are located in the [templates](./pages) directory.
 You can use template inheritance.
 
 ### Configuration
