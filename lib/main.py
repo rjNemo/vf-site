@@ -27,12 +27,7 @@ def main():
     for page in os.scandir(config.templates_dir):
         if page.is_file():
             with open(os.path.join(destination_path, page.name), "w") as fd:
-                data_file_path = os.path.join(config.data_dir, f"{page.name.split('.')[0]}.toml")
-                data = {}
-                if os.path.isfile(data_file_path):
-                    with open(data_file_path, "rb") as f:
-                        data = tomllib.load(f)
-                        logger.debug(data)
+                data = parse_data(page, config.data_dir)
                 logger.info(f"📃Render '{page.name}'")
                 fd.write(fs.render(page.name, data))
 
@@ -40,6 +35,15 @@ def main():
     copy_tree(config.static_dir, os.path.join(config.out_dir))
 
     logger.info("🎉 Done…")
+
+
+def parse_data(page: os.DirEntry, data_dir: str) -> dict:
+    data_file_path = os.path.join(data_dir, f"{page.name.split('.')[0]}.toml")
+    data = {}
+    if os.path.isfile(data_file_path):
+        with open(data_file_path, "rb") as f:
+            data = tomllib.load(f)
+    return data
 
 
 def clean_dist(destination_path: str):
