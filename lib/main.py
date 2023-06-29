@@ -3,6 +3,7 @@ import shutil
 import sys
 import tomllib
 from distutils.dir_util import copy_tree
+from time import perf_counter
 
 from loguru import logger
 
@@ -11,6 +12,7 @@ from lib.engine import FileSystemRenderer
 
 
 def main():
+    start = perf_counter()
     try:
         config = load()
     except FileNotFoundError:
@@ -34,7 +36,8 @@ def main():
     logger.info("⏩ Start copying staticfiles to build")
     copy_tree(config.static_dir, os.path.join(config.out_dir))
 
-    logger.info("🎉 Done…")
+    end = perf_counter()
+    logger.info(f"🎉 Done… in {(end - start) * 1000:.2f} ms")
 
 
 def parse_data(page: os.DirEntry, data_dir: str) -> dict:
