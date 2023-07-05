@@ -1,8 +1,6 @@
 import tomllib
 from dataclasses import dataclass
 
-NAME = "name"
-
 
 @dataclass(frozen=True)
 class Config:
@@ -17,7 +15,7 @@ def load() -> Config:
     with open("config.toml", "rb") as f:
         raw_config = tomllib.load(f)
         return Config(
-            name=raw_config[NAME],
+            name=raw_config["name"],
             static_dir="assets",
             data_dir="data",
             out_dir="dist",

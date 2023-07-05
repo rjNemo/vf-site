@@ -7,37 +7,41 @@ from time import perf_counter
 
 from loguru import logger
 
-from lib.config import load
+from lib.config import Config, load
 from lib.engine import FileSystemRenderer
 
 
 def main():
     start = perf_counter()
+    config = parse_config()
+
+    fs = FileSystemRenderer(config)
+
+    logger.info(f"🏁 Start building {config.name}")
+    clean_dist(config.out_dir)
+
+    for page in os.scandir(config.templates_dir):
+        if page.is_file():
+            with open(os.path.join(config.out_dir, page.name), "w") as fd:
+                data = parse_data(page, config.data_dir)
+                logger.info(f"📃 Render '{page.name}'")
+                fd.write(fs.render(page.name, data))
+
+    logger.info("⏩  Copy static assets to build")
+    copy_tree(config.static_dir, os.path.join(config.out_dir))
+
+    end = perf_counter()
+    logger.info(f"🎉 Done… in {(end - start) * 1000:.2f} ms")
+
+
+def parse_config() -> Config:
     try:
         config = load()
     except FileNotFoundError:
         logger.error("the configuration file 'config.toml' was not found. Please verify it exists at the root level")
         sys.exit(1)
-
-    destination_path = config.out_dir
-    fs = FileSystemRenderer(config)
-
-    logger.info(f"🏁 Start building {config.name}")
-
-    clean_dist(destination_path)
-
-    for page in os.scandir(config.templates_dir):
-        if page.is_file():
-            with open(os.path.join(destination_path, page.name), "w") as fd:
-                data = parse_data(page, config.data_dir)
-                logger.info(f"📃Render '{page.name}'")
-                fd.write(fs.render(page.name, data))
-
-    logger.info("⏩ Copy static assets to build")
-    copy_tree(config.static_dir, os.path.join(config.out_dir))
-
-    end = perf_counter()
-    logger.info(f"🎉 Done… in {(end - start) * 1000:.2f} ms")
+    else:
+        return config
 
 
 def parse_data(page: os.DirEntry, data_dir: str) -> dict:
