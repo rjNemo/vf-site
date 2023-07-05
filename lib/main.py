@@ -5,7 +5,7 @@ import tomllib
 from distutils.dir_util import copy_tree
 from time import perf_counter
 
-from loguru import logger
+from rich import print
 
 from lib.config import Config, load
 from lib.engine import FileSystemRenderer
@@ -17,28 +17,31 @@ def main():
 
     fs = FileSystemRenderer(config)
 
-    logger.info(f"🏁 Start building {config.name}")
+    print(f"🏁 Start building [italic red]{config.name}[/italic red]")
     clean_dist(config.out_dir)
 
     for page in os.scandir(config.templates_dir):
         if page.is_file():
             with open(os.path.join(config.out_dir, page.name), "w") as fd:
                 data = parse_data(page, config.data_dir)
-                logger.info(f"📃 Render '{page.name}'")
+                print(f"📃 Render [italic cyan]{page.name}[/italic cyan]")
                 fd.write(fs.render(page.name, data))
 
-    logger.info("⏩  Copy static assets to build")
+    print("⏩  Copy static assets to build")
     copy_tree(config.static_dir, os.path.join(config.out_dir))
 
     end = perf_counter()
-    logger.info(f"🎉 Done… in {(end - start) * 1000:.2f} ms")
+    print(f"🎉 Done… in [italic red]{(end - start) * 1000:.2f} ms[/italic red]")
 
 
 def parse_config() -> Config:
     try:
         config = load()
     except FileNotFoundError:
-        logger.error("the configuration file 'config.toml' was not found. Please verify it exists at the root level")
+        print(
+            "🛑 configuration file [italic red]'config.toml'[/italic red] was not found. "
+            "Please verify it exists at the root level"
+        )
         sys.exit(1)
     else:
         return config

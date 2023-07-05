@@ -74,6 +74,8 @@ You can then deploy the site on any platform supporting static sites (Netlify,â€
 - [ ] Create a template for the rooms
 - [ ] Build script before commit
 - [ ] Lit parapluie, barbecue et machine Ã  laver
+- [x] Use rich instead of logger
+- [ ] Add file watching mode
 
 ## Excluded
 

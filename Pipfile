@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 jinja2 = "*"
-loguru = "*"
+rich = "*"
 
 [dev-packages]
 black = "*"
