@@ -8,7 +8,7 @@ jinja2 = "*"
 loguru = "*"
 
 [dev-packages]
-black = {extras = ["d"], version = "*"}
+black = "*"
 mypy = "*"
 ruff = "*"
 

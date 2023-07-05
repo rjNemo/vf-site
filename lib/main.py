@@ -16,11 +16,11 @@ def main():
     try:
         config = load()
     except FileNotFoundError:
-        logger.error("The configuration file 'config.toml' was not found. Please verify it exists at the root level")
-        sys.exit()
+        logger.error("the configuration file 'config.toml' was not found. Please verify it exists at the root level")
+        sys.exit(1)
 
     destination_path = config.out_dir
-    fs = FileSystemRenderer(config.templates_dir)
+    fs = FileSystemRenderer(config)
 
     logger.info(f"🏁 Start building {config.name}")
 
@@ -33,7 +33,7 @@ def main():
                 logger.info(f"📃Render '{page.name}'")
                 fd.write(fs.render(page.name, data))
 
-    logger.info("⏩ Start copying staticfiles to build")
+    logger.info("⏩ Copy static assets to build")
     copy_tree(config.static_dir, os.path.join(config.out_dir))
 
     end = perf_counter()
