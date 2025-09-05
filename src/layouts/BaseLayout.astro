@@ -1,6 +1,11 @@
 ---
 import '../styles/global.css';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
+const pathname = Astro.url.pathname;
+const toFr = (p: string) => p.startsWith('/en/') ? `/fr/${p.slice(4)}` : (p.startsWith('/fr/') ? p : '/fr/');
+const toEn = (p: string) => p.startsWith('/fr/') ? `/en/${p.slice(4)}` : (p.startsWith('/en/') ? p : '/en/');
+const altFr = toFr(pathname);
+const altEn = toEn(pathname);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -10,6 +15,9 @@ const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortable
     <title>{title} · VillaFleurie</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/assets/images/logo.png" />
+    <link rel="alternate" hreflang="fr" href={altFr} />
+    <link rel="alternate" hreflang="en" href={altEn} />
+    <link rel="alternate" hreflang="x-default" href="/fr/" />
   </head>
   <body class="min-h-screen bg-white text-slate-900">
     <header class="border-b border-slate-200">
@@ -24,6 +32,11 @@ const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortable
           <a href="/fr/acces/" class="text-sm hover:underline">Accès</a>
           <a href="/fr/tarifs-disponibilites/" class="text-sm hover:underline">Tarifs</a>
           <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
+          <div class="ml-2 flex items-center gap-2 text-xs">
+            <a href={altFr} class={"hover:underline " + (lang==='fr' ? 'font-semibold text-brand-600' : '')}>FR</a>
+            <span class="text-slate-400">|</span>
+            <a href={altEn} class={"hover:underline " + (lang==='en' ? 'font-semibold text-brand-600' : '')}>EN</a>
+          </div>
         </div>
       </nav>
     </header>
