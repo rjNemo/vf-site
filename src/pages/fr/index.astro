@@ -7,54 +7,95 @@ const t2Href = hrefFor('apartment_t2', 'fr');
 const t3Href = hrefFor('apartment_t3', 'fr');
 ---
 <BaseLayout title={title} lang="fr" description="Séjours confortables au Gosier pour couples et petites familles">
-  <section class="relative">
-    <img src="/assets/images/villafleurie_t2_salon_1_wl81yXI.jpg" alt="Salon lumineux" class="w-full h-[50vh] object-cover" />
-    <div class="absolute inset-0 bg-black/30" />
+  <section class="relative h-[70vh] md:h-[80vh]">
+    <img src="/assets/images/villafleurie_t2_salon_1_wl81yXI.jpg" alt="Salon lumineux" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/30" />
     <div class="absolute inset-0 flex items-center">
       <div class="mx-auto max-w-6xl px-6">
-        <h1 class="text-white text-3xl md:text-5xl font-semibold max-w-3xl">Séjours confortables au Gosier pour couples et petites familles</h1>
-        <p class="text-white/90 mt-3 max-w-2xl">Deux appartements lumineux, près des plages. Envoyez une demande ou réservez instantanément.</p>
-        <div class="mt-6 flex gap-3">
-          <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
-          <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" on:click={() => plausible('click_booking', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Booking.com</a>
-          <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" on:click={() => plausible('click_airbnb', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Airbnb (T2)</a>
+        <h1 class="text-white text-4xl md:text-6xl font-semibold leading-tight max-w-3xl drop-shadow">Séjours confortables au Gosier pour couples et petites familles</h1>
+        <p class="text-white/90 mt-4 max-w-2xl text-lg">Deux appartements lumineux, près des plages. Envoyez une demande ou réservez instantanément.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-5 py-3 text-white hover:bg-brand-600">Envoyer une demande</a>
+          <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" on:click={() => plausible('click_booking', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Booking.com</a>
+          <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" on:click={() => plausible('click_airbnb', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Airbnb (T2)</a>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-slate-50">
+    <div class="mx-auto max-w-6xl px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-800">
+      <div class="flex items-center gap-3"><span class="text-xl">🏖️</span><span>Près des plages</span></div>
+      <div class="flex items-center gap-3"><span class="text-xl">🅿️</span><span>Parking sécurisé sur place</span></div>
+      <div class="flex items-center gap-3"><span class="text-xl">📶</span><span>Wi‑Fi rapide et stable</span></div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-12">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Découvrir VillaFleurie</h2>
+        <p class="mt-4 text-slate-700 leading-relaxed">Villa est un lieu de vacances unique situé sur le magnifique archipel de la Guadeloupe, prête à accueillir des touristes en quête de tranquillité tout au long de l'année.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="/assets/images/villafleurie_t2_terrasse.jpg" alt="Terrasse" class="h-40 w-full object-cover rounded-lg shadow" />
+        <img src="/assets/images/villafleurie_t3_salon.jpg" alt="Salon T3" class="h-40 w-full object-cover rounded-lg shadow" />
+        <img src="/assets/images/villafleurie_t2_cuisine.jpg" alt="Cuisine" class="h-40 w-full object-cover rounded-lg shadow" />
+        <img src="/assets/images/villafleurie_t3_chambre.jpg" alt="Chambre T3" class="h-40 w-full object-cover rounded-lg shadow" />
       </div>
     </div>
   </section>
 
   <section class="mx-auto max-w-6xl px-6 py-12">
-    <h2 class="text-2xl font-semibold">Découvrir VillaFleurie</h2>
-    <p class="mt-3 text-slate-700">Villa est un lieu de vacances unique situé sur le magnifique archipel de la Guadeloupe, prête à accueillir des touristes en quête de tranquillité tout au long de l'année.</p>
+    <h2 class="text-2xl md:text-3xl font-semibold">Installations</h2>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm">
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">❄️ Climatisation</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">📶 Wi‑Fi rapide</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">🍳 Cuisine équipée</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">👶 Lit bébé</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">🅿️ Parking sécurisé</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">🏖️ Près des plages</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">🕊️ Quartier calme</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white">👨‍👩‍👧 Adapté familles</div>
+    </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-6 py-8">
-    <h2 class="text-2xl font-semibold">Installations</h2>
-    <ul class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-      <li>Climatisation</li>
-      <li>Wi‑Fi rapide</li>
-      <li>Cuisine équipée</li>
-      <li>Lit bébé sur demande</li>
-      <li>Parking sécurisé</li>
-      <li>Près des plages</li>
-      <li>Quartier calme</li>
-      <li>Adapté aux familles</li>
-    </ul>
+  <section class="mx-auto max-w-6xl px-6 py-12">
+    <h2 class="text-2xl md:text-3xl font-semibold">Appartements</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <article class="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/assets/images/villafleurie_t2_salon_2.jpg" alt="T2 Corail" class="h-48 w-full object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">T2 Corail</h3>
+          <p class="mt-1 text-sm text-slate-600">45 m² • 2–3 pers. • 1 lit queen + canapé‑lit • 59 €/nuit</p>
+          <a href={t2Href} class="mt-3 inline-block rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Découvrir</a>
+        </div>
+      </article>
+      <article class="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+        <img src="/assets/images/villafleurie_t3_salon.jpg" alt="T3 Azur" class="h-48 w-full object-cover" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">T3 Azur</h3>
+          <p class="mt-1 text-sm text-slate-600">55 m² • jusqu’à 4 pers. • 2 lits queen • 79 €/nuit</p>
+          <a href={t3Href} class="mt-3 inline-block rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Découvrir</a>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-6 py-8">
-    <h2 class="text-2xl font-semibold">Appartements</h2>
-    <div class="mt-4 grid md:grid-cols-2 gap-6">
-      <article class="rounded-lg border border-slate-200 p-4">
-        <h3 class="text-lg font-semibold">T2 Corail</h3>
-        <p class="text-sm text-slate-600">45 m² • 2–3 personnes • 1 lit queen + canapé‑lit • 59 €/nuit</p>
-        <a href={t2Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
-      </article>
-      <article class="rounded-lg border border-slate-200 p-4">
-        <h3 class="text-lg font-semibold">T3 Azur</h3>
-        <p class="text-sm text-slate-600">55 m² • jusqu’à 4 personnes • 2 lits queen • 79 €/nuit</p>
-        <a href={t3Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
-      </article>
+  <section class="mx-auto max-w-6xl px-6 py-12">
+    <h2 class="text-2xl md:text-3xl font-semibold">Avis</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <figure class="rounded-xl border border-slate-200 bg-white p-4">
+        <figcaption class="text-sm text-slate-600">Michel — 10/10</figcaption>
+        <blockquote class="mt-2 text-slate-800">« Parfait. Rapport qualité‑prix imbattable. Hôtes aux petits soins. »</blockquote>
+      </figure>
+      <figure class="rounded-xl border border-slate-200 bg-white p-4">
+        <figcaption class="text-sm text-slate-600">Caratterina — 9/10</figcaption>
+        <blockquote class="mt-2 text-slate-800">« Très spacieux, confortable et extrêmement propre. Quartier calme. »</blockquote>
+      </figure>
+      <figure class="rounded-xl border border-slate-200 bg-white p-4">
+        <figcaption class="text-sm text-slate-600">Anaïs — 10/10</figcaption>
+        <blockquote class="mt-2 text-slate-800">« Gentillesse des hôtes, propreté et literie très confortable ! »</blockquote>
+      </figure>
     </div>
   </section>
 
