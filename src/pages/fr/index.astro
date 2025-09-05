@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { hrefFor } from '../../i18n/routes';
 const title = 'Accueil';
+const contactHref = hrefFor('contact', 'fr');
+const t2Href = hrefFor('apartment_t2', 'fr');
+const t3Href = hrefFor('apartment_t3', 'fr');
 ---
 <BaseLayout title={title} lang="fr" description="Séjours confortables au Gosier pour couples et petites familles">
   <section class="relative">
@@ -11,7 +15,7 @@ const title = 'Accueil';
         <h1 class="text-white text-3xl md:text-5xl font-semibold max-w-3xl">Séjours confortables au Gosier pour couples et petites familles</h1>
         <p class="text-white/90 mt-3 max-w-2xl">Deux appartements lumineux, près des plages. Envoyez une demande ou réservez instantanément.</p>
         <div class="mt-6 flex gap-3">
-          <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
+          <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
           <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" on:click={() => plausible('click_booking', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Booking.com</a>
           <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" on:click={() => plausible('click_airbnb', {props:{locale:'fr',page:'home',position:'hero'}})}>Réserver sur Airbnb (T2)</a>
         </div>
@@ -44,12 +48,12 @@ const title = 'Accueil';
       <article class="rounded-lg border border-slate-200 p-4">
         <h3 class="text-lg font-semibold">T2 Corail</h3>
         <p class="text-sm text-slate-600">45 m² • 2–3 personnes • 1 lit queen + canapé‑lit • 59 €/nuit</p>
-        <a href="/fr/appartements/t2-corail/" class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
+        <a href={t2Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
       </article>
       <article class="rounded-lg border border-slate-200 p-4">
         <h3 class="text-lg font-semibold">T3 Azur</h3>
         <p class="text-sm text-slate-600">55 m² • jusqu’à 4 personnes • 2 lits queen • 79 €/nuit</p>
-        <a href="/fr/appartements/t3-azur/" class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
+        <a href={t3Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
       </article>
     </div>
   </section>

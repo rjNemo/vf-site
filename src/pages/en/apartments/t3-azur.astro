@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { hrefFor } from '../../../i18n/routes';
+const contactHref = hrefFor('contact', 'en');
 ---
 <BaseLayout title="T3 Azur" lang="en">
   <div class="mx-auto max-w-6xl px-6 py-10">
@@ -16,9 +18,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <li>Check‑in 14:00 / Check‑out 11:00</li>
     </ul>
     <div class="mt-6 flex gap-3">
-      <a href="/en/contact/" class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Send a Request</a>
+      <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Send a Request</a>
       <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 px-4 py-2">Book on Airbnb (T3)</a>
     </div>
   </div>
 </BaseLayout>
-
