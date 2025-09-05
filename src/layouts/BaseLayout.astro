@@ -21,7 +21,7 @@ const homeHref = hrefFor('home', lang);
     <link rel="alternate" hreflang="en" href={altEn} />
     <link rel="alternate" hreflang="x-default" href="/fr/" />
   </head>
-  <body class="min-h-screen bg-white text-slate-900">
+  <body class="min-h-screen flex flex-col bg-white text-slate-900">
     <header class="border-b border-slate-200">
       <nav class="mx-auto max-w-6xl p-4">
         <div class="flex items-center justify-between">
@@ -59,10 +59,10 @@ const homeHref = hrefFor('home', lang);
         </div>
       </nav>
     </header>
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
-    <footer class="mt-16 border-t border-slate-200">
+    <footer class="mt-auto border-t border-slate-200">
       <div class="mx-auto max-w-6xl p-6 text-sm text-slate-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <p>Contact: <a class="underline" href="mailto:location.villafleurie@gmail.com">location.villafleurie@gmail.com</a> · <a class="underline" href="tel:+33658961279">+33 6 58 96 12 79</a></p>
