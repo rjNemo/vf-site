@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { hrefFor } from '../../i18n/routes';
+import { Umbrella, Car, Wifi, Snowflake, Utensils, Home as HomeIcon, Users, Baby } from 'lucide-astro';
 const title = 'Accueil';
 const contactHref = hrefFor('contact', 'fr');
 const t2Href = hrefFor('apartment_t2', 'fr');
@@ -24,9 +25,9 @@ const t3Href = hrefFor('apartment_t3', 'fr');
   </section>
   <section class="bg-slate-50">
     <div class="mx-auto max-w-6xl px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-slate-800">
-      <div class="flex items-center gap-3"><span class="text-xl">🏖️</span><span>Près des plages</span></div>
-      <div class="flex items-center gap-3"><span class="text-xl">🅿️</span><span>Parking sécurisé sur place</span></div>
-      <div class="flex items-center gap-3"><span class="text-xl">📶</span><span>Wi‑Fi rapide et stable</span></div>
+      <div class="flex items-center gap-3"><Umbrella class="h-5 w-5 text-brand" /><span>Près des plages</span></div>
+      <div class="flex items-center gap-3"><Car class="h-5 w-5 text-brand" /><span>Parking sécurisé sur place</span></div>
+      <div class="flex items-center gap-3"><Wifi class="h-5 w-5 text-brand" /><span>Wi‑Fi rapide et stable</span></div>
     </div>
   </section>
 
@@ -45,17 +46,33 @@ const t3Href = hrefFor('apartment_t3', 'fr');
     </div>
   </section>
 
+  <section class="mx-auto max-w-6xl px-6">
+    <div class="relative">
+      <div id="desc-carousel" class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" style="scroll-behavior:smooth">
+        {[ '/assets/images/villafleurie_t2_terrasse.jpg', '/assets/images/villafleurie_t3_salon.jpg', '/assets/images/villafleurie_t2_cuisine.jpg', '/assets/images/villafleurie_t3_chambre.jpg' ].map((src) => (
+          <img src={src} alt="Aperçu" class="h-48 w-80 object-cover rounded-lg snap-start" />
+        ))}
+      </div>
+      <div class="absolute inset-y-0 left-0 flex items-center">
+        <button type="button" class="rounded-full bg-white/90 shadow p-2" onclick="(function(){ const el=document.getElementById('desc-carousel'); el && el.scrollBy({left:-300,behavior:'smooth'}); })()">‹</button>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center">
+        <button type="button" class="rounded-full bg-white/90 shadow p-2" onclick="(function(){ const el=document.getElementById('desc-carousel'); el && el.scrollBy({left:300,behavior:'smooth'}); })()">›</button>
+      </div>
+    </div>
+  </section>
+
   <section class="mx-auto max-w-6xl px-6 py-12">
     <h2 class="text-2xl md:text-3xl font-semibold">Installations</h2>
     <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm">
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">❄️ Climatisation</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">📶 Wi‑Fi rapide</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">🍳 Cuisine équipée</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">👶 Lit bébé</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">🅿️ Parking sécurisé</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">🏖️ Près des plages</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">🕊️ Quartier calme</div>
-      <div class="rounded-xl border border-slate-200 p-4 bg-white">👨‍👩‍👧 Adapté familles</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Snowflake class="h-5 w-5 text-brand" /> Climatisation</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Wifi class="h-5 w-5 text-brand" /> Wi‑Fi rapide</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Utensils class="h-5 w-5 text-brand" /> Cuisine équipée</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Baby class="h-5 w-5 text-brand" /> Lit bébé sur demande</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Car class="h-5 w-5 text-brand" /> Parking sécurisé</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Umbrella class="h-5 w-5 text-brand" /> Près des plages</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><HomeIcon class="h-5 w-5 text-brand" /> Quartier calme</div>
+      <div class="rounded-xl border border-slate-200 p-4 bg-white flex items-center gap-2"><Users class="h-5 w-5 text-brand" /> Adapté familles</div>
     </div>
   </section>
 

@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.5",
+    "lucide-astro": "^0.542.0",
     "tailwindcss": "^4.1.13"
   },
   "packageManager": "pnpm@10.15.1"

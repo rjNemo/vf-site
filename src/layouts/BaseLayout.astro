@@ -22,7 +22,7 @@ const homeHref = hrefFor('home', lang);
     <link rel="alternate" hreflang="x-default" href="/fr/" />
   </head>
   <body class="min-h-screen flex flex-col bg-white text-slate-900">
-    <header class="border-b border-slate-200">
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
       <nav class="mx-auto max-w-6xl p-4">
         <div class="flex items-center justify-between">
           <a href={homeHref} class="flex items-center gap-3">
@@ -66,7 +66,7 @@ const homeHref = hrefFor('home', lang);
       <div class="mx-auto max-w-6xl p-6 text-sm text-slate-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <p>Contact: <a class="underline" href="mailto:location.villafleurie@gmail.com">location.villafleurie@gmail.com</a> · <a class="underline" href="tel:+33658961279">+33 6 58 96 12 79</a></p>
-          <p class="mt-1">© VillaFleurie</p>
+          <p class="mt-1">© VillaFleurie · Built by <a href="https://ruidy.nemausat.com" target="_blank" rel="noopener" class="underline">Ruidy Nemausat</a></p>
         </div>
         <ul class="flex gap-4">
           {lang === 'en' ? (
@@ -90,6 +90,13 @@ const homeHref = hrefFor('home', lang);
     <script>
       // Plausible init
       window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}
+      // Sticky header shadow on scroll
+      const header = document.querySelector('header');
+      if (header) {
+        const onScroll = () => header.classList.toggle('shadow-sm', window.scrollY > 0);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
       // Mobile nav toggle
       const btn = document.getElementById('nav-toggle');
       const menu = document.getElementById('mobile-menu');
