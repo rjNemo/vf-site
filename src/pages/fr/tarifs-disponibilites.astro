@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Tarifs & Disponibilités" lang="fr">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <h1 class="text-3xl font-semibold">Tarifs & Disponibilités</h1>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T2 Corail</h2>
+        <p class="mt-1 text-slate-700">59 € / nuit</p>
+      </div>
+      <div class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T3 Azur</h2>
+        <p class="mt-1 text-slate-700">79 € / nuit</p>
+      </div>
+    </div>
+    <div class="mt-6 text-sm text-slate-700 space-y-2">
+      <p>Frais de ménage: 20 € si le logement est laissé sale, gratuit sinon.</p>
+      <p>Caution: aucune.</p>
+      <p>Annulation tardive: 50% dans les 14 jours avant l’arrivée. Voir la politique d’annulation.</p>
+    </div>
+    <div class="mt-6 flex gap-3">
+      <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="underline">Réserver sur Booking.com</a>
+      <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="underline">Réserver sur Airbnb (T2)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="underline">Réserver sur Airbnb (T3)</a>
+    </div>
+  </div>
+</BaseLayout>
+

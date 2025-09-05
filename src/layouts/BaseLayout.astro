@@ -1,0 +1,52 @@
+---
+const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · VillaFleurie</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/assets/images/logo.png" />
+  </head>
+  <body class="min-h-screen bg-white text-slate-900">
+    <header class="border-b border-slate-200">
+      <nav class="mx-auto max-w-6xl flex items-center justify-between p-4">
+        <a href="/fr/" class="flex items-center gap-3">
+          <img src="/assets/images/logo.png" alt="VillaFleurie" class="h-10 w-auto" />
+          <span class="sr-only">VillaFleurie</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <a href="/fr/appartements/" class="text-sm hover:underline">Appartements</a>
+          <a href="/fr/avis/" class="text-sm hover:underline">Avis</a>
+          <a href="/fr/acces/" class="text-sm hover:underline">Accès</a>
+          <a href="/fr/tarifs-disponibilites/" class="text-sm hover:underline">Tarifs</a>
+          <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-[#1EBBCE] px-3 py-2 text-white hover:bg-[#138A9A]">Envoyer une demande</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="mt-16 border-t border-slate-200">
+      <div class="mx-auto max-w-6xl p-6 text-sm text-slate-600 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <p>Contact: <a class="underline" href="mailto:location.villafleurie@gmail.com">location.villafleurie@gmail.com</a> · <a class="underline" href="tel:+33658961279">+33 6 58 96 12 79</a></p>
+          <p class="mt-1">© VillaFleurie</p>
+        </div>
+        <ul class="flex gap-4">
+          <li><a class="underline" href="/fr/politiques/conditions/">Conditions</a></li>
+          <li><a class="underline" href="/fr/politiques/confidentialite/">Confidentialité</a></li>
+          <li><a class="underline" href="/fr/politiques/annulation/">Annulation</a></li>
+          <li><a class="underline" href="/fr/politiques/reglement/">Règlement intérieur</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}
+    </script>
+    <script defer data-domain="villafleuriegp.com" src="https://plausible.nemausat.com/js/script.outbound-links.js"></script>
+  </body>
+  </html>
+
