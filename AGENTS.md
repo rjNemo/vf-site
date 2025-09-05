@@ -2,56 +2,47 @@
 
 ## Project Structure & Modules
 
-- `lib/`: static site generator code — `main.py` (entry point), `config.py`, `engine.py`.
-- `pages/`: Jinja templates; layouts live in `pages/layouts/`.
-- `data/`: page data in TOML; file name must match the template
-  (e.g., `index.toml` → `index.html`).
-- `assets/`: static files copied as‑is (`css/`, `js/`, `images/`, `webfonts/`).
-- `dist/`: build output (generated, can be deleted/rebuilt).
-- `config.toml`: required; at minimum `name = "VillaFleurie"`.
+- `src/`: Astro app — `pages/` (locale folders: `fr/`, `en/`), `layouts/`, `styles/`.
+- `src/i18n/routes.ts`: central route manifest (`hrefFor`, `siblingPath`) for FR/EN slugs.
+- `public/`: static assets and redirects (`_redirects`, `assets/images`, `webfonts`, etc.).
+- `docs/spec/website-revamp-spec.md`: product/UX spec and release plan (source of truth).
+- Legacy: `lib/`, `pages/`, `data/` (Python generator) — deprecated; do not modify.
 
 ## Build, Test, and Development
 
-- `make build`: renders templates into `dist/` (`pipenv run python -m lib.main`).
-- `make run`: builds then serves `dist/` via `http.server`.
-- `make lint`: format (`black`), lint/fix (`ruff`), and type‑check (`mypy`).
-- Direct run: `pipenv run python -m lib.main`.
-- Setup: `pipenv install --dev` (Python 3.11).
+- Setup: `corepack enable && pnpm i` (uses `pnpm@10`).
+- Dev server: `pnpm dev` (Astro). Build: `pnpm build`. Preview: `pnpm preview`.
+- Deploy: Netlify (static). Redirects in `public/_redirects` (root → `/fr/`).
+- Analytics: Plausible (`plausible("event", {props})`).
 
-## Coding Style & Naming
+## Coding Style & Conventions
 
-- Python: formatted by `black` (120 cols), imports via `isort` (black profile),
-  linted by `ruff`; type hints required (`mypy` with `disallow_untyped_defs`).
-- Templates: Jinja; use inheritance with `pages/layouts/`. Prefer kebab‑case
-  filenames (e.g., `t3-azur.html`).
-- Data files: TOML mirroring template names (e.g., `t3-azur.toml`). Keep keys lower_snake_case.
-- Modules: snake_case for Python files and identifiers.
+- UI: Tailwind CSS v4 (brand tokens: `--color-brand`, `--color-brand-600`).
+- Icons: `lucide-astro` inline SVGs; use `text-brand` for accent.
+- JS: vanilla only (no jQuery). Prefer lightweight patterns (e.g., scrollBy carousels).
+- i18n: use `hrefFor()` and `siblingPath()` for all internal links and language toggles.
+- Content slugs differ by locale (e.g., FR `avis` ↔ EN `reviews`) — never hardcode.
 
 ## Testing Guidelines
 
-- No formal test suite. Validate changes by:
-  - Running `make lint` and fixing all issues.
-  - Building with `make build` and visually checking pages in `dist/` (`make run`).
-  - Verifying the correct data file is picked up for each template.
+- Sanity: `pnpm build` must succeed. Then `pnpm preview` for visual QA.
+- Check: FR/EN toggles, redirects (`/ → /fr/`), forms (Netlify), and analytics events.
+- Accessibility: keyboard nav for mobile menu; color contrast for brand accents.
 
 ## Commit & Pull Requests
 
-- Use Conventional Commits (seen in history):
-  - Examples: `refactor(html): modernize header markup`,
-    `feat(engine): add file watching`.
-- PRs must:
-  - Pass `make lint` and build cleanly.
-  - Include a clear description, linked issues, and affected pages/files.
-  - Add screenshots of visual changes (before/after) where relevant.
-  - Stay focused and small; avoid mixed concerns.
+- Conventional Commits (examples): `feat(home): hero CTA`, `fix(i18n): toggle sibling path`.
+- PRs should include: build passing, screenshots (FR/EN), and spec updates when needed.
+- Keep focused and small; avoid mixing refactors with features.
 
-## Revamp Spec & Branch
+## Revamp Spec & Phases
 
-- Active branch: `revamp/website-spec`.
-- Source of truth: `docs/spec/website-revamp-spec.md` (keep updated in PRs).
-- Align changes to the agreed sitemap and CTAs defined in the spec.
+- Branch: `revamp/website-spec`. Spec: `docs/spec/website-revamp-spec.md`.
+- Phase 1 (current): FR core pages, inquiry form, i18n scaffolding.
+- Phase 2: EN pages + gallery, translated reviews.
+- Phase 3: Policies, analytics KPIs, performance polish (WebP/srcset, Lighthouse).
 
-## Configuration Tips
+## Notes
 
-- Ensure `config.toml` exists at repo root; build fails without it.
-- Do not commit generated `dist/` output.
+- Do not commit `dist/`. Assets live in `public/assets/...`.
+- Use the route manifest for any new pages/links; add entries for new slugs.
