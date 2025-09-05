@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
 ---
 <!doctype html>
@@ -22,7 +23,7 @@ const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortable
           <a href="/fr/avis/" class="text-sm hover:underline">Avis</a>
           <a href="/fr/acces/" class="text-sm hover:underline">Accès</a>
           <a href="/fr/tarifs-disponibilites/" class="text-sm hover:underline">Tarifs</a>
-          <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-[#1EBBCE] px-3 py-2 text-white hover:bg-[#138A9A]">Envoyer une demande</a>
+          <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
         </div>
       </nav>
     </header>
@@ -49,4 +50,3 @@ const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortable
     <script defer data-domain="villafleuriegp.com" src="https://plausible.nemausat.com/js/script.outbound-links.js"></script>
   </body>
   </html>
-
