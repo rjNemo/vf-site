@@ -46,7 +46,7 @@ const thankHref = hrefFor('thank_you', 'en');
       </label>
       <label class="md:col-span-2 flex items-start gap-2 text-sm">
         <input type="checkbox" required name="consent_privacy" />
-        <span>I agree to the use of my data to process my request in accordance with the <a class="underline" href="/fr/politiques/confidentialite/">Privacy Policy</a>.</span>
+        <span>I agree to the use of my data to process my request in accordance with the <a class="underline" href={hrefFor('privacy','en')}>Privacy Policy</a>.</span>
       </label>
       <div class="md:col-span-2">
         <button class="rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Send</button>

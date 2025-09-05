@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Règlement intérieur" lang="fr">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Règlement Intérieur</h1>
+    <ul>
+      <li>Non‑fumeur, pas de fêtes, pas d’animaux.</li>
+      <li>Respect du voisinage et du calme.</li>
+      <li>Check‑in 14:00 · Check‑out 11:00.</li>
+      <li>Utilisation normale des équipements; signaler tout dommage.</li>
+    </ul>
+    <p class="text-sm">Dernière mise à jour: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

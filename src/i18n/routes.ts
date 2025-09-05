@@ -9,7 +9,11 @@ export type RouteKey =
   | 'location'
   | 'rates'
   | 'contact'
-  | 'thank_you';
+  | 'thank_you'
+  | 'terms'
+  | 'privacy'
+  | 'cancellation'
+  | 'house_rules';
 
 export const routes: Record<RouteKey, Record<Locale, string>> = {
   home: { fr: '/fr/', en: '/en/' },
@@ -21,6 +25,10 @@ export const routes: Record<RouteKey, Record<Locale, string>> = {
   rates: { fr: '/fr/tarifs-disponibilites/', en: '/en/rates-availability/' },
   contact: { fr: '/fr/contact/', en: '/en/contact/' },
   thank_you: { fr: '/fr/merci/', en: '/en/thank-you/' },
+  terms: { fr: '/fr/politiques/conditions/', en: '/en/policies/terms/' },
+  privacy: { fr: '/fr/politiques/confidentialite/', en: '/en/policies/privacy/' },
+  cancellation: { fr: '/fr/politiques/annulation/', en: '/en/policies/cancellation/' },
+  house_rules: { fr: '/fr/politiques/reglement/', en: '/en/policies/house-rules/' },
 };
 
 const normalize = (p: string) => {
@@ -68,4 +76,3 @@ export function navFor(locale: Locale): Array<{ label: string; href: string }> {
 export function ctaLabelFor(locale: Locale): string {
   return locale === 'en' ? 'Send a Request' : 'Envoyer une demande';
 }
-

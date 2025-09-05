@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="House Rules" lang="en">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>House Rules</h1>
+    <ul>
+      <li>No smoking, no parties, no pets.</li>
+      <li>Respect neighbors and quiet hours.</li>
+      <li>Check‑in 14:00 · Check‑out 11:00.</li>
+      <li>Normal use of amenities; report any damage.</li>
+    </ul>
+    <p class="text-sm">Last updated: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

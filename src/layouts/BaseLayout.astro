@@ -49,10 +49,21 @@ const homeHref = hrefFor('home', lang);
           <p class="mt-1">© VillaFleurie</p>
         </div>
         <ul class="flex gap-4">
-          <li><a class="underline" href="/fr/politiques/conditions/">Conditions</a></li>
-          <li><a class="underline" href="/fr/politiques/confidentialite/">Confidentialité</a></li>
-          <li><a class="underline" href="/fr/politiques/annulation/">Annulation</a></li>
-          <li><a class="underline" href="/fr/politiques/reglement/">Règlement intérieur</a></li>
+          {lang === 'en' ? (
+            <>
+              <li><a class="underline" href={hrefFor('terms','en')}>Terms</a></li>
+              <li><a class="underline" href={hrefFor('privacy','en')}>Privacy</a></li>
+              <li><a class="underline" href={hrefFor('cancellation','en')}>Cancellation</a></li>
+              <li><a class="underline" href={hrefFor('house_rules','en')}>House Rules</a></li>
+            </>
+          ) : (
+            <>
+              <li><a class="underline" href={hrefFor('terms','fr')}>Conditions</a></li>
+              <li><a class="underline" href={hrefFor('privacy','fr')}>Confidentialité</a></li>
+              <li><a class="underline" href={hrefFor('cancellation','fr')}>Annulation</a></li>
+              <li><a class="underline" href={hrefFor('house_rules','fr')}>Règlement intérieur</a></li>
+            </>
+          )}
         </ul>
       </div>
     </footer>

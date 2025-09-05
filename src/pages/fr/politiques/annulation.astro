@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Annulation" lang="fr">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Politique d’Annulation</h1>
+    <ul>
+      <li>Annulation tardive: 50% des frais si annulé dans les 14 jours avant l’arrivée.</li>
+      <li>No‑show: traité comme une annulation tardive.</li>
+      <li>Caution: aucune.</li>
+      <li>Frais de ménage: 20 € si laissé sale, gratuit sinon.</li>
+    </ul>
+    <p class="text-sm">Dernière mise à jour: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

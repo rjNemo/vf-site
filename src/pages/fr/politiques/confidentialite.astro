@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Confidentialité" lang="fr">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Politique de Confidentialité</h1>
+    <p>Nous collectons les données soumises via le formulaire (nom, email, dates, etc.) pour répondre à votre demande.</p>
+    <ul>
+      <li>Base légale: exécution de mesures précontractuelles.</li>
+      <li>Conservation: durée nécessaire au traitement et obligations légales.</li>
+      <li>Partage: email de notification (propriétaire), pas de revente.</li>
+      <li>Analytics: Plausible (sans cookie par défaut).</li>
+      <li>Hébergement: Netlify (données de formulaire hébergées chez Netlify).</li>
+      <li>Droits RGPD: accès, rectification, suppression — contactez-nous.</li>
+    </ul>
+    <p>Contact: location.villafleurie@gmail.com</p>
+    <p class="text-sm">Dernière mise à jour: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

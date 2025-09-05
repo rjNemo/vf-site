@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Terms" lang="en">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Terms & Conditions</h1>
+    <p><strong>Legal name:</strong> VillaFleurie (Jacques Gordien)</p>
+    <p><strong>Contact:</strong> location.villafleurie@gmail.com · +33 6 58 96 12 79</p>
+    <p><strong>Hosting:</strong> Netlify · <strong>Jurisdiction:</strong> France</p>
+    <h2>Bookings</h2>
+    <ul>
+      <li>Minimum stay: 3 nights.</li>
+      <li>Check‑in: 14:00 · Check‑out: 11:00.</li>
+      <li>Payments and confirmations communicated by email.</li>
+    </ul>
+    <h2>Liability</h2>
+    <p>Guest is responsible for damages during the stay. We are not liable for lost items.</p>
+    <p class="text-sm">Last updated: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>
