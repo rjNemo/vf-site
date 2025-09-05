@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = 'Home';
+---
+<BaseLayout title={title} lang="en" description="Comfortable stays in Le Gosier for couples and small families">
+  <section class="relative">
+    <img src="/assets/images/villafleurie_t2_salon_1_wl81yXI.jpg" alt="Bright living room" class="w-full h-[50vh] object-cover" />
+    <div class="absolute inset-0 bg-black/30" />
+    <div class="absolute inset-0 flex items-center">
+      <div class="mx-auto max-w-6xl px-6">
+        <h1 class="text-white text-3xl md:text-5xl font-semibold max-w-3xl">Comfortable stays in Le Gosier for couples and small families</h1>
+        <p class="text-white/90 mt-3 max-w-2xl">Two bright apartments near the beaches. Send a request or book instantly.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="/en/contact/" class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Send a Request</a>
+          <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" onclick="plausible('click_booking',{props:{locale:'en',page:'home',position:'hero'}})">Book on Booking.com</a>
+          <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 bg-white/90 px-4 py-2 text-slate-900 hover:bg-white" onclick="plausible('click_airbnb',{props:{locale:'en',page:'home',position:'hero'}})">Book on Airbnb (T2)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-12">
+    <h2 class="text-2xl font-semibold">Get to know VillaFleurie</h2>
+    <p class="mt-3 text-slate-700">Villa is a unique holiday retreat in the beautiful Guadeloupe archipelago, ready to welcome tranquility‑seeking guests all year round.</p>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-8">
+    <h2 class="text-2xl font-semibold">Facilities</h2>
+    <ul class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+      <li>Air conditioning</li>
+      <li>Fast Wi‑Fi</li>
+      <li>Equipped kitchen</li>
+      <li>Crib on demand</li>
+      <li>Secured parking</li>
+      <li>Near the beaches</li>
+      <li>Quiet neighborhood</li>
+      <li>Family‑friendly</li>
+    </ul>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-8">
+    <h2 class="text-2xl font-semibold">Apartments</h2>
+    <div class="mt-4 grid md:grid-cols-2 gap-6">
+      <article class="rounded-lg border border-slate-200 p-4">
+        <h3 class="text-lg font-semibold">T2 Corail</h3>
+        <p class="text-sm text-slate-600">45 m² • 2–3 guests • 1 queen + sofa‑bed • €59/night</p>
+        <a href="/en/apartments/t2-corail/" class="mt-3 inline-block text-brand-600 underline">Discover</a>
+      </article>
+      <article class="rounded-lg border border-slate-200 p-4">
+        <h3 class="text-lg font-semibold">T3 Azur</h3>
+        <p class="text-sm text-slate-600">55 m² • up to 4 guests • 2 queen beds • €79/night</p>
+        <a href="/en/apartments/t3-azur/" class="mt-3 inline-block text-brand-600 underline">Discover</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-8">
+    <h2 class="text-2xl font-semibold">Location & Access</h2>
+    <p class="text-slate-700">4 rue Gerty Archimède, 97190 Le Gosier · Secured onsite parking</p>
+    <div class="mt-4 aspect-video w-full">
+      <iframe class="w-full h-full" style="border:0" loading="lazy" allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.2598078323063!2d-61.48991482394046!3d16.20707768449259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c134f148764f5d5%3A0x981bb218cee8b16c!2sVillaFleurie!5e0!3m2!1sfr!2sde!4v1685258248016!5m2!1sfr!2sde"></iframe>
+    </div>
+  </section>
+</BaseLayout>
+

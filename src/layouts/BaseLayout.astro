@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import { siblingPath, hrefFor, navFor, ctaLabelFor } from '../i18n/routes';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
 const pathname = Astro.url.pathname;
-const toFr = (p: string) => p.startsWith('/en/') ? `/fr/${p.slice(4)}` : (p.startsWith('/fr/') ? p : '/fr/');
-const toEn = (p: string) => p.startsWith('/fr/') ? `/en/${p.slice(4)}` : (p.startsWith('/en/') ? p : '/en/');
-const altFr = toFr(pathname);
-const altEn = toEn(pathname);
+const altFr = siblingPath(pathname, 'fr');
+const altEn = siblingPath(pathname, 'en');
+const nav = navFor(lang);
+const ctaLabel = ctaLabelFor(lang);
+const homeHref = hrefFor('home', lang);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -22,16 +24,13 @@ const altEn = toEn(pathname);
   <body class="min-h-screen bg-white text-slate-900">
     <header class="border-b border-slate-200">
       <nav class="mx-auto max-w-6xl flex items-center justify-between p-4">
-        <a href="/fr/" class="flex items-center gap-3">
+        <a href={homeHref} class="flex items-center gap-3">
           <img src="/assets/images/logo.png" alt="VillaFleurie" class="h-10 w-auto" />
           <span class="sr-only">VillaFleurie</span>
         </a>
         <div class="flex items-center gap-4">
-          <a href="/fr/appartements/" class="text-sm hover:underline">Appartements</a>
-          <a href="/fr/avis/" class="text-sm hover:underline">Avis</a>
-          <a href="/fr/acces/" class="text-sm hover:underline">Accès</a>
-          <a href="/fr/tarifs-disponibilites/" class="text-sm hover:underline">Tarifs</a>
-          <a href="/fr/contact/" class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">Envoyer une demande</a>
+          {nav.map((n) => <a href={n.href} class="text-sm hover:underline">{n.label}</a>)}
+          <a href={hrefFor('contact', lang)} class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">{ctaLabel}</a>
           <div class="ml-2 flex items-center gap-2 text-xs">
             <a href={altFr} class={"hover:underline " + (lang==='fr' ? 'font-semibold text-brand-600' : '')}>FR</a>
             <span class="text-slate-400">|</span>

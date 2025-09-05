@@ -1,1 +1,8 @@
 / /fr/ 301!
+# Helpful aliases to avoid 404s from external links
+/fr/reviews /fr/avis 301
+/en/avis /en/reviews 301
+/fr/location-access /fr/acces 301
+/en/acces /en/location-access 301
+/fr/rates-availability /fr/tarifs-disponibilites 301
+/en/tarifs-disponibilites /en/rates-availability 301
