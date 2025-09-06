@@ -3,8 +3,11 @@ import '../styles/global.css';
 import { ctaLabelFor } from '../i18n/routes';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
-const altFr = "/fr/";
-const altEn = "/en/";
+// Locale alternates for the current path
+const altFr = getRelativeLocaleUrl('fr', Astro.url.pathname);
+const altEn = getRelativeLocaleUrl('en', Astro.url.pathname);
+// Canonical URL
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://villafleuriegp.com').toString();
 const nav = lang === 'en'
   ? [
       { label: 'Apartments', href: getRelativeLocaleUrl('en', '/apartments/') },
@@ -28,10 +31,25 @@ const homeHref = getRelativeLocaleUrl(lang, '/');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} · VillaFleurie</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/assets/images/logo.png" />
     <link rel="alternate" hreflang="fr" href={altFr} />
     <link rel="alternate" hreflang="en" href={altEn} />
     <link rel="alternate" hreflang="x-default" href="/fr/" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VillaFleurie" />
+    <meta property="og:title" content={`${title} · VillaFleurie`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={new URL('/assets/images/header-background-1.jpg', Astro.site ?? 'https://villafleuriegp.com').toString()} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} · VillaFleurie`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/assets/images/header-background-1.jpg', Astro.site ?? 'https://villafleuriegp.com').toString()} />
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
   </head>
   <body class="min-h-screen flex flex-col bg-white text-slate-900">
     <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
@@ -121,5 +139,23 @@ const homeHref = getRelativeLocaleUrl(lang, '/');
       }
     </script>
     <script defer data-domain="villafleuriegp.com" src="https://plausible.nemausat.com/js/script.outbound-links.js"></script>
+    <script type="application/ld+json">{JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'LodgingBusiness',
+      name: 'VillaFleurie',
+      url: canonicalUrl,
+      image: new URL('/assets/images/header-background-1.jpg', Astro.site ?? 'https://villafleuriegp.com').toString(),
+      telephone: '+33 6 58 96 12 79',
+      email: 'location.villafleurie@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '4 rue Gerty Archimède',
+        addressLocality: 'Le Gosier',
+        postalCode: '97190',
+        addressCountry: 'GP'
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 16.206971, longitude: -61.487159 },
+      hasMap: 'https://www.google.com/maps?q=16.206971,-61.487159'
+    })}</script>
   </body>
   </html>

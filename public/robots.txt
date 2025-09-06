@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://villafleuriegp.com/sitemap.xml
