@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier -wl ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -14,5 +15,9 @@
     "lucide-astro": "^0.542.0",
     "tailwindcss": "^4.1.13"
   },
-  "packageManager": "pnpm@10.15.1"
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
 }

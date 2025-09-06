@@ -24,7 +24,7 @@
   padding: 4px;
 }
 .datepicker-dropdown:before {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -34,7 +34,7 @@
   position: absolute;
 }
 .datepicker-dropdown:after {
-  content: '';
+  content: "";
   display: inline-block;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
