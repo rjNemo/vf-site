@@ -3,9 +3,14 @@ import '../styles/global.css';
 import { ctaLabelFor } from '../i18n/routes';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
-// Locale alternates for the current path
-const altFr = getRelativeLocaleUrl('fr', Astro.url.pathname);
-const altEn = getRelativeLocaleUrl('en', Astro.url.pathname);
+// Locale alternates: strip current locale prefix before generating sibling paths
+const pathSuffix = (() => {
+  const p = Astro.url.pathname;
+  const stripped = p.replace(/^\/(fr|en)/, "");
+  return stripped === "" ? "/" : stripped;
+})();
+const altFr = getRelativeLocaleUrl('fr', pathSuffix);
+const altEn = getRelativeLocaleUrl('en', pathSuffix);
 // Canonical URL
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://villafleuriegp.com').toString();
 const nav = lang === 'en'
@@ -35,7 +40,7 @@ const homeHref = getRelativeLocaleUrl(lang, '/');
     <link rel="icon" href="/assets/images/logo.png" />
     <link rel="alternate" hreflang="fr" href={altFr} />
     <link rel="alternate" hreflang="en" href={altEn} />
-    <link rel="alternate" hreflang="x-default" href="/fr/" />
+    <link rel="alternate" hreflang="x-default" href={altFr} />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="VillaFleurie" />

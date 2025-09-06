@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# Both standard and index sitemaps (plugin may generate an index)
 Sitemap: https://villafleuriegp.com/sitemap.xml
+Sitemap: https://villafleuriegp.com/sitemap-index.xml
