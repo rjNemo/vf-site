@@ -46,22 +46,6 @@ export const routes: Record<RouteKey, Record<Locale, string>> = {
   },
 };
 
-export function navFor(locale: Locale): Array<{ label: string; href: string }> {
-  return locale === "en"
-    ? [
-        { label: "Apartments", href: routes.apartments.en },
-        { label: "Reviews", href: routes.reviews.en },
-        { label: "Location & Access", href: routes.location.en },
-        { label: "Rates", href: routes.rates.en },
-      ]
-    : [
-        { label: "Appartements", href: routes.apartments.fr },
-        { label: "Avis", href: routes.reviews.fr },
-        { label: "Accès", href: routes.location.fr },
-        { label: "Tarifs", href: routes.rates.fr },
-      ];
-}
-
 export function ctaLabelFor(locale: Locale): string {
   return locale === "en" ? "Send a Request" : "Envoyer une demande";
 }

@@ -1,11 +1,23 @@
 ---
 import '../styles/global.css';
-import { navFor, ctaLabelFor } from '../i18n/routes';
+import { ctaLabelFor } from '../i18n/routes';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
-const altFr = "/fr/"
-const altEn = "/en/"
-const nav = navFor(lang);
+const altFr = "/fr/";
+const altEn = "/en/";
+const nav = lang === 'en'
+  ? [
+      { label: 'Apartments', href: getRelativeLocaleUrl('en', '/apartments/') },
+      { label: 'Reviews', href: getRelativeLocaleUrl('en', '/reviews/') },
+      { label: 'Location & Access', href: getRelativeLocaleUrl('en', '/location-access/') },
+      { label: 'Rates', href: getRelativeLocaleUrl('en', '/rates-availability/') },
+    ]
+  : [
+      { label: 'Appartements', href: getRelativeLocaleUrl('fr', '/appartements/') },
+      { label: 'Avis', href: getRelativeLocaleUrl('fr', '/avis/') },
+      { label: 'Accès', href: getRelativeLocaleUrl('fr', '/acces/') },
+      { label: 'Tarifs', href: getRelativeLocaleUrl('fr', '/tarifs-disponibilites/') },
+    ];
 const ctaLabel = ctaLabelFor(lang);
 const homeHref = getRelativeLocaleUrl(lang, '/');
 ---

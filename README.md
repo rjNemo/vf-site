@@ -15,7 +15,7 @@ This site is built with Astro and Tailwind, with FR/EN locales. The legacy Pytho
 - `src/pages/fr|en/`: localized pages (Home, Apartments, Reviews, Rates, Contact, Policies).
 - `src/layouts/`: shared layout with sticky header, language toggle, footer.
 - `src/styles/global.css`: Tailwind v4 with brand tokens (`--color-brand`, `--color-brand-600`).
-- `src/i18n/routes.ts`: route manifest (`hrefFor`, `siblingPath`, `navFor`).
+- `src/i18n/routes.ts`: route manifest (`siblingPath`, CTA label helper).
 - `public/`: static assets + `_redirects` (root → `/fr/`).
 - Spec: `docs/spec/website-revamp-spec.md` (goals, sitemap, copy, release plan).
 
