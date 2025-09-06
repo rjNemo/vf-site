@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { hrefFor } from '../../i18n/routes';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Umbrella, Car, Wifi, Snowflake, Utensils, Home as HomeIcon, Users, Baby } from 'lucide-astro';
 const title = 'Accueil';
-const contactHref = hrefFor('contact', 'fr');
-const t2Href = hrefFor('apartment_t2', 'fr');
-const t3Href = hrefFor('apartment_t3', 'fr');
+const contactHref = getRelativeLocaleUrl('fr', '/contact/');
+const t2Href = getRelativeLocaleUrl('fr','/appartements/t2-corail/');
+const t3Href = getRelativeLocaleUrl('fr','/appartements/t3-azur/');
 ---
 <BaseLayout title={title} lang="fr" description="Séjours confortables au Gosier pour couples et petites familles">
   <section class="relative h-[70vh] md:h-[80vh]">

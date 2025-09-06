@@ -20,7 +20,7 @@
 - UI: Tailwind CSS v4 (brand tokens: `--color-brand`, `--color-brand-600`).
 - Icons: `lucide-astro` inline SVGs; use `text-brand` for accent.
 - JS: vanilla only (no jQuery). Prefer lightweight patterns (e.g., scrollBy carousels).
-- i18n: use `hrefFor()` and `siblingPath()` for all internal links and language toggles.
+- i18n: prefer `getRelativeLocaleUrl()` from `astro:i18n` for links; use `siblingPath()` for toggles when slugs differ.
 - Content slugs differ by locale (e.g., FR `avis` ↔ EN `reviews`) — never hardcode.
 
 ## Testing Guidelines

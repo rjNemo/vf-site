@@ -1,13 +1,13 @@
 ---
 import '../styles/global.css';
-import { siblingPath, hrefFor, navFor, ctaLabelFor } from '../i18n/routes';
+import { navFor, ctaLabelFor } from '../i18n/routes';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 const { title = 'VillaFleurie', lang = 'fr', description = 'Séjours confortables au Gosier pour couples et petites familles' } = Astro.props;
-const pathname = Astro.url.pathname;
-const altFr = siblingPath(pathname, 'fr');
-const altEn = siblingPath(pathname, 'en');
+const altFr = "/fr/"
+const altEn = "/en/"
 const nav = navFor(lang);
 const ctaLabel = ctaLabelFor(lang);
-const homeHref = hrefFor('home', lang);
+const homeHref = getRelativeLocaleUrl(lang, '/');
 ---
 <!doctype html>
 <html lang={lang}>
@@ -36,7 +36,7 @@ const homeHref = hrefFor('home', lang);
             </button>
             <div class="hidden md:flex items-center gap-4">
               {nav.map((n) => <a href={n.href} class="text-sm hover:underline">{n.label}</a>)}
-              <a href={hrefFor('contact', lang)} class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">{ctaLabel}</a>
+              <a href={getRelativeLocaleUrl(lang, '/contact/')} class="inline-flex items-center rounded-lg bg-brand px-3 py-2 text-white hover:bg-brand-600">{ctaLabel}</a>
               <div class="ml-2 flex items-center gap-2 text-xs">
                 <a href={altFr} class={"hover:underline " + (lang==='fr' ? 'font-semibold text-brand-600' : '')}>FR</a>
                 <span class="text-slate-400">|</span>
@@ -48,7 +48,7 @@ const homeHref = hrefFor('home', lang);
         <div id="mobile-menu" class="mt-3 hidden md:hidden border-t border-slate-200 pt-3">
           <div class="flex flex-col gap-3">
             {nav.map((n) => <a href={n.href} class="text-base">{n.label}</a>)}
-            <a href={hrefFor('contact', lang)} class="inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">{ctaLabel}</a>
+            <a href={getRelativeLocaleUrl(lang, '/contact/')} class="inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">{ctaLabel}</a>
             <div class="flex items-center gap-2 text-sm">
               <span class="text-slate-500">Lang:</span>
               <a href={altFr} class={"hover:underline " + (lang==='fr' ? 'font-semibold text-brand-600' : '')}>FR</a>
@@ -71,17 +71,17 @@ const homeHref = hrefFor('home', lang);
         <ul class="flex gap-4">
           {lang === 'en' ? (
             <>
-              <li><a class="underline" href={hrefFor('terms','en')}>Terms</a></li>
-              <li><a class="underline" href={hrefFor('privacy','en')}>Privacy</a></li>
-              <li><a class="underline" href={hrefFor('cancellation','en')}>Cancellation</a></li>
-              <li><a class="underline" href={hrefFor('house_rules','en')}>House Rules</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('en','/policies/terms/')}>Terms</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('en','/policies/privacy/')}>Privacy</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('en','/policies/cancellation/')}>Cancellation</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('en','/policies/house-rules/')}>House Rules</a></li>
             </>
           ) : (
             <>
-              <li><a class="underline" href={hrefFor('terms','fr')}>Conditions</a></li>
-              <li><a class="underline" href={hrefFor('privacy','fr')}>Confidentialité</a></li>
-              <li><a class="underline" href={hrefFor('cancellation','fr')}>Annulation</a></li>
-              <li><a class="underline" href={hrefFor('house_rules','fr')}>Règlement intérieur</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('fr','/politiques/conditions/')}>Conditions</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('fr','/politiques/confidentialite/')}>Confidentialité</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('fr','/politiques/annulation/')}>Annulation</a></li>
+              <li><a class="underline" href={getRelativeLocaleUrl('fr','/politiques/reglement/')}>Règlement intérieur</a></li>
             </>
           )}
         </ul>

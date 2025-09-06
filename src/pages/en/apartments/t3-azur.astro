@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { hrefFor } from '../../../i18n/routes';
-const contactHref = hrefFor('contact', 'en');
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const contactHref = getRelativeLocaleUrl('en','/contact/');
 ---
 <BaseLayout title="T3 Azur" lang="en">
   <div class="mx-auto max-w-6xl px-6 py-10">

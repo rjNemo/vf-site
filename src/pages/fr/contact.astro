@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { hrefFor } from '../../i18n/routes';
-const thankHref = hrefFor('thank_you', 'fr');
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const thankHref = getRelativeLocaleUrl('fr', '/merci/');
 ---
 <BaseLayout title="Contact" lang="fr">
   <div class="mx-auto max-w-6xl px-6 py-10">
@@ -46,7 +46,7 @@ const thankHref = hrefFor('thank_you', 'fr');
       </label>
       <label class="md:col-span-2 flex items-start gap-2 text-sm">
         <input type="checkbox" required name="consent_privacy" />
-        <span>J’accepte que mes données soient utilisées pour traiter ma demande conformément à la <a class="underline" href={hrefFor('privacy','fr')}>Politique de Confidentialité</a>.</span>
+        <span>J’accepte que mes données soient utilisées pour traiter ma demande conformément à la <a class="underline" href={getRelativeLocaleUrl('fr','/politiques/confidentialite/')}>Politique de Confidentialité</a>.</span>
       </label>
       <div class="md:col-span-2">
         <button class="rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Envoyer</button>
