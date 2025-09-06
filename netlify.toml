@@ -1,8 +1,6 @@
 [build]
-# Use pnpm via Corepack and build Astro to static `dist/`.
-command = "corepack enable && pnpm install --frozen-lockfile && pnpm build"
+command = "pnpm build"
 publish = "dist"
 
 [build.environment]
-# Ensure Node 24 for Astro/Tailwind.
 NODE_VERSION = "24"
