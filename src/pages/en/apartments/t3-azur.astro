@@ -20,7 +20,7 @@ const contactHref = getRelativeLocaleUrl('en','/contact/');
     </ul>
     <div class="mt-6 flex gap-3">
       <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Send a Request</a>
-      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 px-4 py-2">Book on Airbnb (T3)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-slate-200 px-4 py-2" onclick="plausible('click_airbnb',{props:{locale:'en',page:'apartment',position:'body',apt:'t3'}})">Book on Airbnb (T3)</a>
     </div>
   </div>
 </BaseLayout>

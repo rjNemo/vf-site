@@ -3,9 +3,12 @@
 ## Project Structure & Modules
 
 - `src/`: Astro app — `pages/` (locale folders: `fr/`, `en/`), `layouts/`, `styles/`.
-- `src/i18n/routes.ts`: central route manifest (`hrefFor`, `siblingPath`) for FR/EN slugs.
-- `public/`: static assets and redirects (`_redirects`, `assets/images`, `webfonts`, etc.).
-- `docs/spec/website-revamp-spec.md`: product/UX spec and release plan (source of truth).
+- `src/i18n/routes.ts`: central route manifest (`hrefFor`, `siblingPath`) for FR/EN
+  slugs.
+- `public/`: static assets and redirects (`_redirects`, `assets/images`, `webfonts`,
+  etc.).
+- `docs/spec/website-revamp-spec.md`: product/UX spec and release plan (source of
+  truth).
 - Legacy: `lib/`, `pages/`, `data/` (Python generator) — deprecated; do not modify.
 
 ## Build, Test, and Development
@@ -20,7 +23,8 @@
 - UI: Tailwind CSS v4 (brand tokens: `--color-brand`, `--color-brand-600`).
 - Icons: `lucide-astro` inline SVGs; use `text-brand` for accent.
 - JS: vanilla only (no jQuery). Prefer lightweight patterns (e.g., scrollBy carousels).
-- i18n: prefer `getRelativeLocaleUrl()` from `astro:i18n` for links; use `siblingPath()` for toggles when slugs differ.
+- i18n: prefer `getRelativeLocaleUrl()` from `astro:i18n` for links; use `siblingPath()`
+  for toggles when slugs differ.
 - Content slugs differ by locale (e.g., FR `avis` ↔ EN `reviews`) — never hardcode.
 
 ## Testing Guidelines
@@ -31,7 +35,8 @@
 
 ## Commit & Pull Requests
 
-- Conventional Commits (examples): `feat(home): hero CTA`, `fix(i18n): toggle sibling path`.
+- Conventional Commits (examples): `feat(home): hero CTA`, `fix(i18n): toggle
+sibling path`.
 - PRs should include: build passing, screenshots (FR/EN), and spec updates when needed.
 - Keep focused and small; avoid mixing refactors with features.
 

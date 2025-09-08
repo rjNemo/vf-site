@@ -22,8 +22,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
     <div class="mt-6 flex gap-3">
       <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="underline">Book on Booking.com</a>
-      <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="underline">Book on Airbnb (T2)</a>
-      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="underline">Book on Airbnb (T3)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="underline" onclick="plausible('click_airbnb',{props:{locale:'en',page:'rates',position:'body',apt:'t2'}})">Book on Airbnb (T2)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="underline" onclick="plausible('click_airbnb',{props:{locale:'en',page:'rates',position:'body',apt:'t3'}})">Book on Airbnb (T3)</a>
     </div>
   </div>
 </BaseLayout>

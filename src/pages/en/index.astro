@@ -18,7 +18,8 @@ const t3Href = getRelativeLocaleUrl('en','/apartments/t3-azur/');
         <div class="mt-8 flex flex-wrap gap-3">
           <a href={contactHref} class="inline-flex items-center rounded-lg bg-brand px-5 py-3 text-white hover:bg-brand-600">Send a Request</a>
           <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" onclick="plausible('click_booking',{props:{locale:'en',page:'home',position:'hero'}})">Book on Booking.com</a>
-          <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" onclick="plausible('click_airbnb',{props:{locale:'en',page:'home',position:'hero'}})">Book on Airbnb (T2)</a>
+          <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" onclick="plausible('click_airbnb',{props:{locale:'en',page:'home',position:'hero',apt:'t2'}})">Book on Airbnb (T2)</a>
+          <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg border border-white/70 bg-white/90 px-5 py-3 text-slate-900 hover:bg-white" onclick="plausible('click_airbnb',{props:{locale:'en',page:'home',position:'hero',apt:'t3'}})">Book on Airbnb (T3)</a>
         </div>
       </div>
     </div>
@@ -74,7 +75,7 @@ const t3Href = getRelativeLocaleUrl('en','/apartments/t3-azur/');
     <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
     <div class="mt-6 grid md:grid-cols-2 gap-6">
       <article class="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-        <img src="/assets/images/villafleurie_t2_salon_2.jpg" alt="T2 Corail" class="h-48 w-full object-cover" />
+        <img src="/assets/images/villafleurie_t2_salon_2.jpg" alt="T2 Corail" class="h-48 md:h-64 w-full object-cover" />
         <div class="p-4">
           <h3 class="text-lg font-semibold">T2 Corail</h3>
           <p class="mt-1 text-sm text-slate-600">45 m² • 2–3 guests • 1 queen + sofa‑bed • €59/night</p>
@@ -82,7 +83,7 @@ const t3Href = getRelativeLocaleUrl('en','/apartments/t3-azur/');
         </div>
       </article>
       <article class="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-        <img src="/assets/images/villafleurie_t3_salon.jpg" alt="T3 Azur" class="h-48 w-full object-cover" />
+        <img src="/assets/images/villafleurie_t3_salon.jpg" alt="T3 Azur" class="h-48 md:h-64 w-full object-cover" />
         <div class="p-4">
           <h3 class="text-lg font-semibold">T3 Azur</h3>
           <p class="mt-1 text-sm text-slate-600">55 m² • up to 4 guests • 2 queen beds • €79/night</p>
