@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Rates & Availability" lang="en">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <h1 class="text-3xl font-semibold">Rates & Availability</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T2 Corail</h2>
+        <p class="mt-1 text-slate-700">€59 / night</p>
+      </div>
+      <div class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T3 Azur</h2>
+        <p class="mt-1 text-slate-700">€79 / night</p>
+      </div>
+    </div>
+    <div class="mt-6 text-sm text-slate-700 space-y-2">
+      <p>Cleaning fee: €20 if the apartment is left dirty; free otherwise.</p>
+      <p>Security deposit: none.</p>
+      <p>Late cancellation: 50% within 14 days before arrival. See full cancellation policy (French).</p>
+    </div>
+    <div class="mt-6 flex gap-3">
+      <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="underline">Book on Booking.com</a>
+      <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="underline" onclick="plausible('click_airbnb',{props:{locale:'en',page:'rates',position:'body',apt:'t2'}})">Book on Airbnb (T2)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="underline" onclick="plausible('click_airbnb',{props:{locale:'en',page:'rates',position:'body',apt:'t3'}})">Book on Airbnb (T3)</a>
+    </div>
+  </div>
+</BaseLayout>

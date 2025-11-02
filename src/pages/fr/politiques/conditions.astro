@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Conditions" lang="fr">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Conditions Générales</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <p><strong>Nom légal:</strong> VillaFleurie (Jacques Gordien)</p>
+    <p><strong>Contact:</strong> location.villafleurie@gmail.com · +33 6 58 96 12 79</p>
+    <p><strong>Hébergement:</strong> Netlify · <strong>Juridiction:</strong> France</p>
+    <h2>Réservations</h2>
+    <ul>
+      <li>Séjour minimum: 3 nuits.</li>
+      <li>Arrivée: 14:00 · Départ: 11:00.</li>
+      <li>Paiements et confirmations communiqués par email.</li>
+    </ul>
+    <h2>Responsabilités</h2>
+    <p>Le client est responsable des dommages causés pendant le séjour. Nous déclinons toute responsabilité pour les objets perdus.</p>
+    <p class="text-sm">Dernière mise à jour: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Merci" lang="fr">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <h1 class="text-3xl font-semibold">Merci pour votre demande</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <p class="mt-2 text-slate-700">Nous vous répondrons rapidement. Pour une réservation instantanée :</p>
+    <div class="mt-4 flex gap-3">
+      <a href="https://www.booking.com/hotel/gp/villafleurie.fr.html" target="_blank" rel="noopener" class="underline">Booking.com</a>
+      <a href="https://airbnb.fr/h/villafleurie-t2" target="_blank" rel="noopener" class="underline" on:click={() => plausible('click_airbnb', {props:{locale:'fr',page:'thank-you',position:'body',apt:'t2'}})}>Airbnb (T2)</a>
+      <a href="https://airbnb.fr/h/villafleurie-t3" target="_blank" rel="noopener" class="underline" on:click={() => plausible('click_airbnb', {props:{locale:'fr',page:'thank-you',position:'body',apt:'t3'}})}>Airbnb (T3)</a>
+    </div>
+  </div>
+</BaseLayout>

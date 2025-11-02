@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Cancellation" lang="en">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Cancellation Policy</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <ul>
+      <li>Late cancellation: 50% fee if cancelled within 14 days before arrival.</li>
+      <li>No‑show: treated as late cancellation.</li>
+      <li>Security deposit: none.</li>
+      <li>Cleaning fee: €20 if left dirty; free otherwise.</li>
+    </ul>
+    <p class="text-sm">Last updated: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

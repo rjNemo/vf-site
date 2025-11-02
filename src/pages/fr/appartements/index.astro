@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const t2Href = getRelativeLocaleUrl('fr','/appartements/t2-corail/');
+const t3Href = getRelativeLocaleUrl('fr','/appartements/t3-azur/');
+---
+<BaseLayout title="Appartements" lang="fr">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <h1 class="text-3xl font-semibold">Appartements</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <article class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T2 Corail</h2>
+        <p class="text-sm text-slate-600">45 m² • 2–3 personnes • 1 lit queen + canapé‑lit • 59 €/nuit</p>
+        <a href={t2Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
+      </article>
+      <article class="rounded-lg border border-slate-200 p-4">
+        <h2 class="text-lg font-semibold">T3 Azur</h2>
+        <p class="text-sm text-slate-600">55 m² • jusqu’à 4 personnes • 2 lits queen • 79 €/nuit</p>
+        <a href={t3Href} class="mt-3 inline-block text-brand-600 underline">Découvrir</a>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

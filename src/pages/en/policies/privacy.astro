@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Privacy" lang="en">
+  <div class="mx-auto max-w-3xl px-6 py-10 prose">
+    <h1>Privacy Policy</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <p>We collect data submitted via the form (name, email, dates, etc.) to respond to your request.</p>
+    <ul>
+      <li>Legal basis: pre‑contractual measures.</li>
+      <li>Retention: as needed for processing and legal obligations.</li>
+      <li>Sharing: owner notification email; no resale.</li>
+      <li>Analytics: Plausible (cookie‑free by default).</li>
+      <li>Hosting: Netlify (form data processed by Netlify).</li>
+      <li>Data rights: access, rectification, deletion — contact us.</li>
+    </ul>
+    <p>Contact: location.villafleurie@gmail.com</p>
+    <p class="text-sm">Last updated: {new Date().toISOString().slice(0,10)}</p>
+  </div>
+</BaseLayout>

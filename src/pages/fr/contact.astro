@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const thankHref = getRelativeLocaleUrl('fr', '/merci/');
+---
+<BaseLayout title="Contact" lang="fr">
+  <div class="mx-auto max-w-6xl px-6 py-10">
+    <h1 class="text-3xl font-semibold">Envoyer une demande</h1>
+    <div class="mt-2 h-1 w-16 bg-brand rounded"></div>
+    <form name="bookingForm" method="POST" data-netlify="true" action={thankHref} class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="hidden" name="form-name" value="bookingForm" />
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Nom complet</span>
+        <input class="rounded-lg border border-slate-300 p-2" name="full_name" required />
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Email</span>
+        <input class="rounded-lg border border-slate-300 p-2" type="email" name="email" required />
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Arrivée</span>
+        <input class="rounded-lg border border-slate-300 p-2" type="date" name="arrival_date" required />
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Départ</span>
+        <input class="rounded-lg border border-slate-300 p-2" type="date" name="departure_date" required />
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Appartement</span>
+        <select class="rounded-lg border border-slate-300 p-2" name="apartment" required>
+          <option value="">Choisir…</option>
+          <option value="t2">T2 Corail</option>
+          <option value="t3">T3 Azur</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Adultes</span>
+        <input class="rounded-lg border border-slate-300 p-2" type="number" min="1" name="guests_adults" required />
+      </label>
+      <label class="flex flex-col gap-1">
+        <span class="text-sm">Enfants</span>
+        <input class="rounded-lg border border-slate-300 p-2" type="number" min="0" name="guests_children" />
+      </label>
+      <label class="md:col-span-2 flex flex-col gap-1">
+        <span class="text-sm">Message (optionnel)</span>
+        <textarea class="rounded-lg border border-slate-300 p-2" name="message" rows="4"></textarea>
+      </label>
+      <label class="md:col-span-2 flex items-start gap-2 text-sm">
+        <input type="checkbox" required name="consent_privacy" />
+        <span>J’accepte que mes données soient utilisées pour traiter ma demande conformément à la <a class="underline" href={getRelativeLocaleUrl('fr','/politiques/confidentialite/')}>Politique de Confidentialité</a>.</span>
+      </label>
+      <div class="md:col-span-2">
+        <button class="rounded-lg bg-brand px-4 py-2 text-white hover:bg-brand-600">Envoyer</button>
+      </div>
+    </form>
+  </div>
+</BaseLayout>
